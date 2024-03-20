@@ -1,6 +1,5 @@
 package com.rabbitminers.extendedbogeys.bogeys.common;
 
-import com.rabbitminers.extendedbogeys.data.BogeyPaintColour;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.simibubi.create.foundation.utility.Components;
 import com.simibubi.create.foundation.utility.Lang;
@@ -35,48 +34,6 @@ public class CommonBogeyFunctionality {
 
         if (player.getCooldowns().isOnCooldown(heldItem.getItem()))
             return InteractionResult.PASS;
-
-        if (be != null && heldItem.getItem() instanceof DyeItem dyeItem && !player.isShiftKeyDown()) {
-            player.getCooldowns().addCooldown(heldItem.getItem(), 20);
-            CompoundTag bogeyData = be.getBogeyData();
-            BogeyPaintColour colour = BogeyPaintColour.of(dyeItem.getDyeColor());
-
-            colour.dyeColour.ifPresent(color -> player.displayClientMessage(Components.translatable("extendedbogeys.tooltips.dyed")
-                    .append(capitalize(colour.dyeColour.get().getName()))
-                    .withStyle(Style.EMPTY.withColor(color.getTextColor())), true));
-
-            NBTHelper.writeEnum(bogeyData, BOGEY_PAINT_KEY, colour);
-
-            be.setBogeyData(bogeyData);
-
-            if (!player.isCreative())
-                heldItem.shrink(1);
-
-            return InteractionResult.CONSUME;
-        }
-
-        if (be != null && heldItem.getItem() instanceof AxeItem && !player.isShiftKeyDown()) {
-            player.getCooldowns().addCooldown(heldItem.getItem(), 20);
-            CompoundTag bogeyData = be.getBogeyData();
-            if (!bogeyData.contains(BOGEY_PAINT_KEY)) {
-                NBTHelper.writeEnum(bogeyData, BOGEY_PAINT_KEY, BogeyPaintColour.UNPAINTED);
-                player.displayClientMessage(Components.translatable("extendedbogeys.tooltips.already_clean"), true);
-                be.setBogeyData(bogeyData);
-                return InteractionResult.CONSUME;
-            }
-
-            BogeyPaintColour colour = NBTHelper.readEnum(bogeyData, BOGEY_PAINT_KEY, BogeyPaintColour.class);
-            if (colour == BogeyPaintColour.UNPAINTED) {
-                player.displayClientMessage(Components.translatable("extendedbogeys.tooltips.already_clean"), true);
-                return InteractionResult.CONSUME;
-            }
-
-            player.displayClientMessage(Components.translatable("extendedbogeys.tooltips.cleaned"), true);
-            NBTHelper.writeEnum(bogeyData, BOGEY_PAINT_KEY, BogeyPaintColour.UNPAINTED);
-
-            be.setBogeyData(bogeyData);
-            return InteractionResult.CONSUME;
-        }
 
         if (be != null && heldItem.isEmpty() && !player.isShiftKeyDown()) {
             player.getCooldowns().addCooldown(heldItem.getItem(), 20);

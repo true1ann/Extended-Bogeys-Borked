@@ -1,7 +1,6 @@
 package com.rabbitminers.extendedbogeys.mixin;
 
-import com.rabbitminers.extendedbogeys.bogeys.styles.PaintableStandardBogeyRenderer;
-import com.rabbitminers.extendedbogeys.bogeys.styles.PaintableStandardBogeyRenderer.MediumStandardBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.StandardBogeyRenderer.MediumStandardBogeyRenderer;
 import com.rabbitminers.extendedbogeys.data.ExtendedBogeysBogeySize;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBlocks;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;

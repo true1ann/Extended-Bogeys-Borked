@@ -43,100 +43,39 @@ public abstract class MixinAbstractBogeyBlock extends Block  {
 
     @Shadow protected abstract BlockState copyProperties(BlockState source, BlockState target);
 
-    @Shadow public abstract BogeySizes.BogeySize getSize();
-
-    @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
-                                 BlockHitResult hit) {
-        if (level.isClientSide)
-            return InteractionResult.PASS;
-        ItemStack stack = player.getItemInHand(hand);
-
-        if (!player.isShiftKeyDown() && stack.is(AllItems.WRENCH.get()) && !player.getCooldowns().isOnCooldown(stack.getItem())
-                && AllBogeyStyles.BOGEY_STYLES.size() > 1) {
-
-            BlockEntity be = level.getBlockEntity(pos);
-
-            if (!(be instanceof AbstractBogeyBlockEntity sbbe))
-                return InteractionResult.FAIL;
-
-            player.getCooldowns().addCooldown(stack.getItem(), 20);
-            BogeyStyle currentStyle = sbbe.getStyle();
-
-            BogeySizes.BogeySize size = getSize();
-
-            BogeyStyle style = this.getNextStyle(currentStyle);
-            if (style == currentStyle)
-                return InteractionResult.PASS;
-
-            Set<BogeySizes.BogeySize> validSizes = style.validSizes();
-
-            for (int i = 0; i < BogeySizes.count(); i++) {
-                if (validSizes.contains(size)) break;
-                size = size.increment();
-            }
-
-            sbbe.setBogeyStyle(style);
-
-            CompoundTag defaultData = style.defaultData;
-            sbbe.setBogeyData(sbbe.getBogeyData().merge(defaultData));
-
-            if (size == getSize()) {
-                player.displayClientMessage(Lang.translateDirect("bogey.style.updated_style")
-                        .append(": ").append(style.displayName), true);
-            } else {
-                CompoundTag oldData = sbbe.getBogeyData();
-                level.setBlock(pos, getStateOfSize(sbbe, size), 3);
-                BlockEntity newBlockEntity = level.getBlockEntity(pos);
-                if (!(newBlockEntity instanceof AbstractBogeyBlockEntity newBlockEntity1))
-                    return InteractionResult.FAIL;
-                newBlockEntity1.setBogeyData(oldData);
-                player.displayClientMessage(Lang.translateDirect("bogey.style.updated_style_and_size")
-                        .append(": ").append(style.displayName), true);
-            }
-
-            return InteractionResult.CONSUME;
-        }
+    @Inject(method = "use", at = @At("TAIL"), cancellable = true)
+        public void onUse(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit,
+                          CallbackInfoReturnable<InteractionResult> cir) {
 
         CommonBogeyFunctionality.onInteractWithBogey(state, level, pos, player, hand, hit);
         ItemStack heldItem = player.getItemInHand(hand);
 
         AbstractBogeyBlockEntity be = (AbstractBogeyBlockEntity) level.getBlockEntity(pos);
-        if (be == null) return InteractionResult.PASS;
+        if (be == null) return;
 
         if (!level.isClientSide && !player.getCooldowns().isOnCooldown(heldItem.getItem()) && heldItem.is(Items.AIR)
                 && player.isShiftKeyDown()) {
             player.getCooldowns().addCooldown(heldItem.getItem(), 20);
             CompoundTag bogeyData = be.getBogeyData();
             if (!(state.getBlock() instanceof StandardBogeyBlock unlinkedBogeyBlock))
-                return InteractionResult.PASS;
+                return;
             ExtendedBogeysBogeySize supported = ExtendedBogeysBogeySize.of(unlinkedBogeyBlock.size);
             if (supported == null)
-                return InteractionResult.PASS;
+                return;
             BlockState newState = ExtendedBogeysBlocks.UNLINKED_BOGEYS.get(supported).getDefaultState();
             level.setBlock(pos, copyProperties(state, newState), 3);
             AbstractBogeyBlockEntity newBlockEntity = (AbstractBogeyBlockEntity) level.getBlockEntity(pos);
-            if (newBlockEntity == null) return InteractionResult.FAIL;
+            if (newBlockEntity == null) return;
             bogeyData.putBoolean(Constants.BOGEY_LINK_KEY, false);
             newBlockEntity.setBogeyData(bogeyData);
             player.displayClientMessage(Components.translatable("extendedbogeys.tooltips.unlink")
                     .withStyle(ChatFormatting.GREEN), true);
-            return InteractionResult.CONSUME;
+            cir.setReturnValue(InteractionResult.CONSUME);
         }
-        return InteractionResult.PASS;
     }
-
-    public BlockState getStateOfSize(AbstractBogeyBlockEntity sbte, BogeySizes.BogeySize size) {
-        BogeyStyle style = sbte.getStyle();
-        BlockState state = style.getBlockOfSize(size).defaultBlockState();
-        return copyProperties(sbte.getBlockState(), state);
-    }
-
-    public BogeyStyle getNextStyle(BogeyStyle style) {
-        Collection<BogeyStyle> allStyles = style.getCycleGroup().values();
-        if (allStyles.size() <= 1)
-            return style;
-        List<BogeyStyle> list = new ArrayList<>(allStyles);
-        return Iterate.cycleValue(list, style);
+    @Inject(method = "use", at = @At("RETURN"), cancellable = true)
+    public void fixReturnValue(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit,
+                               CallbackInfoReturnable<InteractionResult> cir) {
+        cir.setReturnValue(InteractionResult.CONSUME);
     }
 }

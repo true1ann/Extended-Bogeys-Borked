@@ -3,9 +3,7 @@ package com.rabbitminers.extendedbogeys.bogeys.styles;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.rabbitminers.extendedbogeys.bogeys.renderers.ExtendedBogeysBogeyRenderer;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;
-import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.content.trains.bogey.BogeyRenderer;
@@ -16,14 +14,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 
 import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.MEDIUM_SHARED_WHEELS;
-import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.MEDIUM_TRIPLE_WHEEL_FRAME;
+import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.MEDIUM_STANDARD_FRAME;
 
-public class TripleAxleBogeyRenderer {
-    public static class MediumTripleAxisBogeyRenderer extends BogeyRenderer {
+public class StandardBogeyRenderer {
+    public static class MediumStandardBogeyRenderer extends BogeyRenderer {
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
-            createModelInstance(materialManager, MEDIUM_SHARED_WHEELS, 3);
-            createModelInstance(materialManager, MEDIUM_TRIPLE_WHEEL_FRAME);
+            createModelInstance(materialManager, MEDIUM_SHARED_WHEELS, 2);
+            createModelInstance(materialManager, MEDIUM_STANDARD_FRAME);
             createModelInstance(materialManager, AllBlocks.SHAFT.getDefaultState()
                     .setValue(ShaftBlock.AXIS, Direction.Axis.Z), 2);
         }
@@ -40,22 +38,22 @@ public class TripleAxleBogeyRenderer {
 
             for (int i : Iterate.zeroAndOne) {
                 secondaryShafts[i]
-                        .translate(-.5f, .31f, .5f + i * -2)
+                        .translate(-.5f, .25f, i * -1)
                         .centre()
                         .rotateZ(wheelAngle)
                         .unCentre()
                         .render(ms, light, vb);
             }
 
-            getTransform(MEDIUM_TRIPLE_WHEEL_FRAME, ms, inContraption)
+            getTransform(MEDIUM_STANDARD_FRAME, ms, inContraption)
                     .render(ms, light, vb);
 
-            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inContraption, 3);
-            for (int side = -1; side < 2; side++) {
+            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inContraption, 2);
+            for (int side : Iterate.positiveAndNegative) {
                 if (!inContraption)
                     ms.pushPose();
-                BogeyModelData wheel = wheels[side + 1];
-                wheel.translate(0, 13 / 16f, side * 1.5)
+                BogeyModelData wheel = wheels[(side + 1) / 2];
+                wheel.translate(0, 13 / 16f, side)
                         .rotateX(wheelAngle)
                         .translate(0, -13 / 16f, 0)
                         .render(ms, light, vb);

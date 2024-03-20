@@ -5,9 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "client.MixinAbstractBogeyBlockEntity",
-    "client.MixinAllBogeyStyles",
-    "client.MixinBogeyBlockEntityRenderer",
-    "client.MixinBogeyInstance"
+    "client.MixinBogeyBlockEntityRenderer"
   ],
   "mixins": [
     "MixinAbstractBogeyBlock",
