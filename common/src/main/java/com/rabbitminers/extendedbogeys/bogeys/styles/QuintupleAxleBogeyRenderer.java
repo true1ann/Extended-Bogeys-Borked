@@ -70,7 +70,7 @@ public class QuintupleAxleBogeyRenderer {
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, LARGE_10_FRAME_LONG);
             createModelInstance(materialManager, LARGE_SHARED_WHEELS, 2);
-            createModelInstance(materialManager, LARGE_SHARED_WHEELS_SEMI_BLIND);
+            createModelInstance(materialManager, LARGE_SHARED_WHEELS_SEMI_BLIND, 2);
             createModelInstance(materialManager, LARGE_10_RIGHT_C_ROD_LONG);
             createModelInstance(materialManager, LARGE_10_LEFT_C_ROD_LONG);
             createModelInstance(materialManager, LARGE_10_RIGHT_P_ROD_LONG);
@@ -188,7 +188,7 @@ public class QuintupleAxleBogeyRenderer {
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, LARGE_10_FRAME_SHORT);
             createModelInstance(materialManager, LARGE_SHARED_WHEELS, 2);
-            createModelInstance(materialManager, LARGE_SHARED_WHEELS_SEMI_BLIND);
+            createModelInstance(materialManager, LARGE_SHARED_WHEELS_SEMI_BLIND, 2);
             createModelInstance(materialManager, LARGE_10_RIGHT_C_ROD_SHORT);
             createModelInstance(materialManager, LARGE_10_LEFT_C_ROD_SHORT);
             createModelInstance(materialManager, LARGE_10_RIGHT_P_ROD_SHORT);
