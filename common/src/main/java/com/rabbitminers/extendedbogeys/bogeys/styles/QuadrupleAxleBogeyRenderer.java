@@ -109,7 +109,7 @@ public class QuadrupleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel1 = wheels1[(side1 + 1) / 2];
                 wheel1.rotateY(forwards ? 0 : 180)
@@ -118,7 +118,7 @@ public class QuadrupleAxleBogeyRenderer {
                         .render(ms, light, vb);
             }
 
-            BogeyModelData[] wheels2 = getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
+            BogeyModelData[] wheels2 = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
             for (int side2 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel2 = wheels2[(side2 + 1) / 2];
                 wheel2.rotateY(forwards ? 0 : 180)
@@ -220,7 +220,7 @@ public class QuadrupleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel1 = wheels1[(side1 + 1) / 2];
                 wheel1.rotateY(forwards ? 0 : 180)
@@ -229,7 +229,7 @@ public class QuadrupleAxleBogeyRenderer {
                         .render(ms, light, vb);
             }
 
-            BogeyModelData[] wheels2 = getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
+            BogeyModelData[] wheels2 = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
             for (int side2 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel2 = wheels2[(side2 + 1) / 2];
                 wheel2.rotateY(forwards ? 0 : 180)
@@ -331,7 +331,7 @@ public class QuadrupleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel1 = wheels1[(side1 + 1) / 2];
                 wheel1.rotateY(forwards ? 0 : 180)
@@ -340,7 +340,7 @@ public class QuadrupleAxleBogeyRenderer {
                         .render(ms, light, vb);
             }
 
-            BogeyModelData[] wheels2 = getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
+            BogeyModelData[] wheels2 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
             for (int side2 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel2 = wheels2[(side2 + 1) / 2];
                 wheel2.rotateY(forwards ? 0 : 180)
@@ -442,7 +442,7 @@ public class QuadrupleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel1 = wheels1[(side1 + 1) / 2];
                 wheel1.rotateY(forwards ? 0 : 180)
@@ -451,7 +451,7 @@ public class QuadrupleAxleBogeyRenderer {
                         .render(ms, light, vb);
             }
 
-            BogeyModelData[] wheels2 = getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption, 2);
+            BogeyModelData[] wheels2 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
             for (int side2 : Iterate.positiveAndNegative) {
                 BogeyModelData wheel2 = wheels2[(side2 + 1) / 2];
                 wheel2.rotateY(forwards ? 0 : 180)
