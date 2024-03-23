@@ -47,6 +47,4 @@ public abstract class ExtendedBogeysBogeyRenderer extends BogeyRenderer {
     public static boolean isDirectionPosotive(Direction direction) {
         return switch (direction) { case NORTH, WEST, UP -> true; case SOUTH, DOWN, EAST -> false; };
     }
-
-    public abstract void initialiseContraptionModelData(MaterialManager materialManager);
 }

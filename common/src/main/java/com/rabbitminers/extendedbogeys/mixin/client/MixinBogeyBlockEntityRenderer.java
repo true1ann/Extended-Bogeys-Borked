@@ -1,8 +1,7 @@
 package com.rabbitminers.extendedbogeys.mixin.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.rabbitminers.extendedbogeys.bogeys.unlinked.UnlinkedBogeyBlock;
-import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
+import com.rabbitminers.extendedbogeys.bogeys.blocks.UnlinkedBogeyBlock;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.simibubi.create.content.trains.bogey.BogeyBlockEntityRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;

@@ -1,0 +1,17 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/large/l4/l4_long/frame.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/large/l4/piston",
+        "1": "extendedbogeys:block/bogey/large/l4/extras",
+        "2": "extendedbogeys:block/bogey/large/l4/xl_textures",
+        "3": "extendedbogeys:block/bogey/large/l4/axis",
+        "4": "extendedbogeys:block/bogey/large/l4/xl_belts",
+        "5": "extendedbogeys:block/bogey/large/l4/wheel",
+        "6": "extendedbogeys:block/bogey/large/l4/frame",
+        "7": "extendedbogeys:block/bogey/large/l4/trailing_bogey_base"
+    },
+    "porting_lib:loader": "porting_lib:obj"
+}

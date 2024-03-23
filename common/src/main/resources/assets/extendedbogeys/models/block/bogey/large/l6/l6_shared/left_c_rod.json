@@ -1,0 +1,10 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/large/l6/l6_shared/left_c_rod.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/large/l6/xl_textures"
+    },
+    "porting_lib:loader": "porting_lib:obj"
+}

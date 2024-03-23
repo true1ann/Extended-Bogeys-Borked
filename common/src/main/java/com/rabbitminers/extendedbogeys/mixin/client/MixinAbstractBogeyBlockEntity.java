@@ -1,7 +1,7 @@
 package com.rabbitminers.extendedbogeys.mixin.client;
 
 import com.rabbitminers.extendedbogeys.ExtendedBogeys;
-import com.rabbitminers.extendedbogeys.bogeys.unlinked.UnlinkedBogeyBlock;
+import com.rabbitminers.extendedbogeys.bogeys.blocks.UnlinkedBogeyBlock;
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
