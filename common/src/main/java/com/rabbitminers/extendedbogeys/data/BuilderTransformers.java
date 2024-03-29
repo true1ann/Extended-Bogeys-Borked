@@ -12,10 +12,9 @@ import org.jetbrains.annotations.ApiStatus;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
-public class BuilderTransformers2 {
-
+public class BuilderTransformers {
     @ApiStatus.Internal
-    public static <B extends ExtraLargeBogeyBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> xl_bogey() {
+    public static <B extends ExtraLargeBogeyBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> bogey() {
         return b -> b.initialProperties(SharedProperties::softMetal)
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
             .properties(BlockBehaviour.Properties::noOcclusion)

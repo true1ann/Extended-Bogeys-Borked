@@ -1,8 +1,6 @@
 package com.rabbitminers.extendedbogeys.bogeys.blocks;
 
-import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;
 import com.simibubi.create.AllBlockEntityTypes;
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllBogeyStyles;
 import com.simibubi.create.content.schematics.requirement.ISpecialBlockItemRequirement;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
@@ -12,11 +10,7 @@ import com.simibubi.create.content.trains.bogey.StandardBogeyBlockEntity;
 import com.simibubi.create.content.trains.track.TrackMaterial;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 public class ExtraLargeBogeyBlock extends AbstractBogeyBlock<StandardBogeyBlockEntity>
@@ -39,7 +33,7 @@ public class ExtraLargeBogeyBlock extends AbstractBogeyBlock<StandardBogeyBlockE
 
     @Override
     public double getWheelRadius() {
-        return (size == ExtendedBogeysBogeySizes.EXTRA_LARGE ? 16 : 6.5) / 16d;
+        return 14 / 16d;
     }
 
     @Override
@@ -50,11 +44,6 @@ public class ExtraLargeBogeyBlock extends AbstractBogeyBlock<StandardBogeyBlockE
     @Override
     public BogeyStyle getDefaultStyle() {
         return AllBogeyStyles.STANDARD;
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-        return AllBlocks.RAILWAY_CASING.asStack();
     }
 
     @Override

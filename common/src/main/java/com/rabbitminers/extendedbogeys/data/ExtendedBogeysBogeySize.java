@@ -12,7 +12,6 @@ public enum ExtendedBogeysBogeySize {
     MEDIUM(ExtendedBogeysBogeySizes.MEDIUM),
     LARGE(BogeySizes.LARGE, true),
     EXTRA_LARGE(ExtendedBogeysBogeySizes.EXTRA_LARGE),
-    HUGE(ExtendedBogeysBogeySizes.HUGE)
     ;
 
     public final BogeySizes.BogeySize size;

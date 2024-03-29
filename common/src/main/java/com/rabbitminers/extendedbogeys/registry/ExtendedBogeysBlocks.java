@@ -5,12 +5,11 @@ import com.rabbitminers.extendedbogeys.base.types.BogeySizeBlockSet;
 import com.rabbitminers.extendedbogeys.bogeys.blocks.ExtraLargeBogeyBlock;
 import com.rabbitminers.extendedbogeys.bogeys.blocks.UnlinkedBogeyBlock;
 import com.rabbitminers.extendedbogeys.bogeys.blocks.UnlinkedBogeyCarriageMovementBehaviour;
+import com.rabbitminers.extendedbogeys.data.BuilderTransformers;
 import com.rabbitminers.extendedbogeys.multiloader.BlockstateGenerationHooks;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.StandardBogeyBlock;
-import com.simibubi.create.foundation.data.*;
-import com.rabbitminers.extendedbogeys.data.*;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.TagGen;
 import net.minecraft.world.level.block.SoundType;
@@ -37,7 +36,7 @@ public class ExtendedBogeysBlocks {
 		if (!size.inBuilt)
 			return REGISTRATE.block(size.id() + "_bogey", p -> new StandardBogeyBlock(p, size.size))
 					.properties(p -> p.mapColor(MapColor.PODZOL))
-					.transform(BuilderTransformers.bogey())
+					.transform(com.simibubi.create.foundation.data.BuilderTransformers.bogey())
 					.register();
 		else return size.size == BogeySizes.LARGE ? AllBlocks.LARGE_BOGEY : AllBlocks.SMALL_BOGEY;
 	});
@@ -45,7 +44,7 @@ public class ExtendedBogeysBlocks {
 	public static final BogeySizeBlockSet<ExtraLargeBogeyBlock> EXTRA_LARGE_BOGEYS = new BogeySizeBlockSet<>(size ->
 			REGISTRATE.block(size.id() + "_bogey", p -> new ExtraLargeBogeyBlock(p, size.size))
 					.properties(p -> p.mapColor(MapColor.PODZOL))
-					.transform(BuilderTransformers2.xl_bogey())
+					.transform(BuilderTransformers.bogey())
 					.register());
 
 	public static void register() {
