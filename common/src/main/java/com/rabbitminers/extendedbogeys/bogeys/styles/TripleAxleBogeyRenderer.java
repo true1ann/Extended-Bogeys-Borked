@@ -33,8 +33,9 @@ public class TripleAxleBogeyRenderer {
 
         @Override
         public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
             BogeyModelData[] secondaryShafts = getTransform(AllBlocks.SHAFT.getDefaultState()
-                    .setValue(ShaftBlock.AXIS, Direction.Axis.Z), ms, inContraption, 2);
+                    .setValue(ShaftBlock.AXIS, Direction.Axis.Z), ms, inInstancedContraption, 2);
 
             for (int i : Iterate.zeroAndOne) {
                 secondaryShafts[i]
@@ -45,19 +46,19 @@ public class TripleAxleBogeyRenderer {
                         .render(ms, light, vb);
             }
 
-            getTransform(MEDIUM_TRIPLE_WHEEL_FRAME, ms, inContraption)
+            getTransform(MEDIUM_TRIPLE_WHEEL_FRAME, ms, inInstancedContraption)
                     .render(ms, light, vb);
 
-            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inContraption, 3);
+            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inInstancedContraption, 3);
             for (int side = -1; side < 2; side++) {
-                if (!inContraption)
+                if (!inInstancedContraption)
                     ms.pushPose();
                 BogeyModelData wheel = wheels[side + 1];
                 wheel.translate(0, 13 / 16f, side * 1.5)
                         .rotateX(wheelAngle)
                         .translate(0, -13 / 16f, 0)
                         .render(ms, light, vb);
-                if (!inContraption)
+                if (!inInstancedContraption)
                     ms.popPose();
             }
         }
@@ -83,6 +84,7 @@ public class TripleAxleBogeyRenderer {
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
 //______________________________________________________________________________________________________________________
             //Variables
             double wheelAngleRight = Math.toRadians(wheelAngle);
@@ -104,21 +106,25 @@ public class TripleAxleBogeyRenderer {
             double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.09));
 //______________________________________________________________________________________________________________________
             //Frame
-            getTransform(LARGE_6_FRAME_LONG, ms, inContraption)
+            getTransform(LARGE_6_FRAME_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
                 BogeyModelData wheel = wheels[(side + 1) / 2];
                 wheel.rotateY(forwards ? 0 : 180)
                         .translate(0, 1, side * 1.6875)
                         .rotateX(forwards ? wheelAngle: -wheelAngle)
                         .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
             }
 
-            getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption)
+            getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, 0)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -126,7 +132,7 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Connecting Rods
-            getTransform(LARGE_6_SHARED_RIGHT_C_ROD, ms, inContraption)
+            getTransform(LARGE_6_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 1 / 4f, 0)
@@ -134,7 +140,7 @@ public class TripleAxleBogeyRenderer {
                     .translateY(1)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_SHARED_LEFT_C_ROD, ms, inContraption)
+            getTransform(LARGE_6_SHARED_LEFT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
                     .translate(0, 1 / 4f, 0)
@@ -143,27 +149,27 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Piston Rods
-            getTransform(LARGE_6_RIGHT_P_ROD_LONG, ms, inContraption)
+            getTransform(LARGE_6_RIGHT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_LEFT_P_ROD_LONG, ms, inContraption)
+            getTransform(LARGE_6_LEFT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Main Rods
-            getTransform(LARGE_6_RIGHT_M_ROD_LONG, ms, inContraption)
+            getTransform(LARGE_6_RIGHT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -2.609375)
                     .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_LEFT_M_ROD_LONG, ms, inContraption)
+            getTransform(LARGE_6_LEFT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -2.609375)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
@@ -192,6 +198,7 @@ public class TripleAxleBogeyRenderer {
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
 //______________________________________________________________________________________________________________________
             //Variables
             double wheelAngleRight = Math.toRadians(wheelAngle);
@@ -213,21 +220,25 @@ public class TripleAxleBogeyRenderer {
             double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.13));
 //______________________________________________________________________________________________________________________
             //Frame
-            getTransform(LARGE_6_FRAME_SHORT, ms, inContraption)
+            getTransform(LARGE_6_FRAME_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels = getTransform(LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
                 BogeyModelData wheel = wheels[(side + 1) / 2];
                 wheel.rotateY(forwards ? 0 : 180)
                         .translate(0, 1, side * 1.6875)
                         .rotateX(forwards ? wheelAngle: -wheelAngle)
                         .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
             }
 
-            getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption)
+            getTransform(LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, 0)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -235,7 +246,7 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Connecting Rods
-            getTransform(LARGE_6_SHARED_RIGHT_C_ROD, ms, inContraption)
+            getTransform(LARGE_6_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 1 / 4f, 0)
@@ -243,7 +254,7 @@ public class TripleAxleBogeyRenderer {
                     .translateY(1)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_SHARED_LEFT_C_ROD, ms, inContraption)
+            getTransform(LARGE_6_SHARED_LEFT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
                     .translate(0, 1 / 4f, 0)
@@ -252,27 +263,27 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Piston Rods
-            getTransform(LARGE_6_RIGHT_P_ROD_SHORT, ms, inContraption)
+            getTransform(LARGE_6_RIGHT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_LEFT_P_ROD_SHORT, ms, inContraption)
+            getTransform(LARGE_6_LEFT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Main Rods
-            getTransform(LARGE_6_RIGHT_M_ROD_SHORT, ms, inContraption)
+            getTransform(LARGE_6_RIGHT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -1.796875)
                     .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(LARGE_6_LEFT_M_ROD_SHORT, ms, inContraption)
+            getTransform(LARGE_6_LEFT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -1.796875)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
@@ -301,6 +312,7 @@ public class TripleAxleBogeyRenderer {
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
 //______________________________________________________________________________________________________________________
             //Variables
             double wheelAngleRight = Math.toRadians(wheelAngle);
@@ -322,21 +334,25 @@ public class TripleAxleBogeyRenderer {
             double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.106));
 //______________________________________________________________________________________________________________________
             //Frame
-            getTransform(EXTRA_LARGE_6_FRAME_LONG, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_FRAME_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
                 BogeyModelData wheel = wheels[(side + 1) / 2];
                 wheel.rotateY(forwards ? 0 : 180)
                         .translate(0, 1.25, side * 2.25)
                         .rotateX(forwards ? wheelAngle: -wheelAngle)
                         .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
             }
 
-            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption)
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, 0)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -344,7 +360,7 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Connecting Rods
-            getTransform(EXTRA_LARGE_6_SHARED_RIGHT_C_ROD, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 3 / 8f, 0)
@@ -352,7 +368,7 @@ public class TripleAxleBogeyRenderer {
                     .translateY(1.25)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_SHARED_LEFT_C_ROD, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_SHARED_LEFT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
                     .translate(0, 3 / 8f, 0)
@@ -361,27 +377,27 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Piston Rods
-            getTransform(EXTRA_LARGE_6_RIGHT_P_ROD_LONG, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_RIGHT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1.25,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_LEFT_P_ROD_LONG, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_LEFT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1.25,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Main Rods
-            getTransform(EXTRA_LARGE_6_RIGHT_M_ROD_LONG, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_RIGHT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -3.4375)
                     .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_LEFT_M_ROD_LONG, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_LEFT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -3.4375)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
@@ -410,6 +426,7 @@ public class TripleAxleBogeyRenderer {
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
 //______________________________________________________________________________________________________________________
             //Variables
             double wheelAngleRight = Math.toRadians(wheelAngle);
@@ -431,21 +448,25 @@ public class TripleAxleBogeyRenderer {
             double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.145));
 //______________________________________________________________________________________________________________________
             //Frame
-            getTransform(EXTRA_LARGE_6_FRAME_SHORT, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_FRAME_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Driver Wheels
-            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inContraption, 2);
+            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
                 BogeyModelData wheel = wheels[(side + 1) / 2];
                 wheel.rotateY(forwards ? 0 : 180)
                         .translate(0, 1.25, side * 2.25)
                         .rotateX(forwards ? wheelAngle: -wheelAngle)
                         .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
             }
 
-            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inContraption)
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, 0)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -453,7 +474,7 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Connecting Rods
-            getTransform(EXTRA_LARGE_6_SHARED_RIGHT_C_ROD, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 3 / 8f, 0)
@@ -461,7 +482,7 @@ public class TripleAxleBogeyRenderer {
                     .translateY(1.25)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_SHARED_LEFT_C_ROD, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_SHARED_LEFT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
                     .translate(0, 3 / 8f, 0)
@@ -470,27 +491,27 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Piston Rods
-            getTransform(EXTRA_LARGE_6_RIGHT_P_ROD_SHORT, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_RIGHT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1.25,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_LEFT_P_ROD_SHORT, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_LEFT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1.25,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
             //Main Rods
-            getTransform(EXTRA_LARGE_6_RIGHT_M_ROD_SHORT, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_RIGHT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -2.4375)
                     .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
-            getTransform(EXTRA_LARGE_6_LEFT_M_ROD_SHORT, ms, inContraption)
+            getTransform(EXTRA_LARGE_6_LEFT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -2.4375)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)

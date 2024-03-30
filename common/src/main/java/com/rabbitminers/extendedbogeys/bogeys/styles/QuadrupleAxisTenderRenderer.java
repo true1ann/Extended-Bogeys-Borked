@@ -31,8 +31,9 @@ public class QuadrupleAxisTenderRenderer {
 
         @Override
         public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
             BogeyModelData[] secondaryShafts = getTransform(AllBlocks.SHAFT.getDefaultState()
-                    .setValue(ShaftBlock.AXIS, Direction.Axis.Z), ms, inContraption, 4);
+                    .setValue(ShaftBlock.AXIS, Direction.Axis.Z), ms, inInstancedContraption, 4);
 
             for (int side = 0; side < 4; side++) {
                 secondaryShafts[side]
@@ -43,19 +44,19 @@ public class QuadrupleAxisTenderRenderer {
                         .render(ms, light, vb);
             }
 
-            getTransform(MEDIUM_8_0_8_TENDER_FRAME, ms, inContraption)
+            getTransform(MEDIUM_8_0_8_TENDER_FRAME, ms, inInstancedContraption)
                     .render(ms, light, vb);
 
-            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inContraption, 4);
+            BogeyModelData[] wheels = getTransform(MEDIUM_SHARED_WHEELS, ms, inInstancedContraption, 4);
             for (int side = -1; side < 3; side++) {
-                if (!inContraption)
+                if (!inInstancedContraption)
                     ms.pushPose();
                 BogeyModelData wheel = wheels[side + 1];
                 wheel.translate(0, 13 / 16f, -.75f + side * 1.5)
                         .rotateX(wheelAngle)
                         .translate(0, -13 / 16f, 0)
                         .render(ms, light, vb);
-                if (!inContraption)
+                if (!inInstancedContraption)
                     ms.popPose();
             }
         }

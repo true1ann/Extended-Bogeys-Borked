@@ -36,7 +36,7 @@ public class CommonBogeyFunctionality {
             return InteractionResult.PASS;
 
         if (be != null && heldItem.isEmpty() && !player.isShiftKeyDown()) {
-            player.getCooldowns().addCooldown(heldItem.getItem(), 20);
+            player.getCooldowns().addCooldown(heldItem.getItem(), 5);
 
             CompoundTag bogeyData = be.getBogeyData();
 

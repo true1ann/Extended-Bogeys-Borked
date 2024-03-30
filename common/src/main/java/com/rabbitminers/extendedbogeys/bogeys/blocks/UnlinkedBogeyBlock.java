@@ -68,7 +68,7 @@ public class UnlinkedBogeyBlock extends Block implements IBE<StandardBogeyBlockE
         if (!player.isShiftKeyDown() && stack.is(AllItems.WRENCH.get()) && !player.getCooldowns().isOnCooldown(stack.getItem())
                 && AllBogeyStyles.BOGEY_STYLES.size() > 1) {
 
-            player.getCooldowns().addCooldown(stack.getItem(), 20);
+            player.getCooldowns().addCooldown(stack.getItem(), 5);
             BogeyStyle currentStyle = be.getStyle();
 
             BogeySizes.BogeySize size = this.size;
@@ -112,7 +112,7 @@ public class UnlinkedBogeyBlock extends Block implements IBE<StandardBogeyBlockE
             return commonResult;
 
         if (!player.getCooldowns().isOnCooldown(stack.getItem()) && stack.is(Items.AIR) && player.isShiftKeyDown()) {
-            player.getCooldowns().addCooldown(stack.getItem(), 20);
+            player.getCooldowns().addCooldown(stack.getItem(), 5);
             CompoundTag bogeyData = be.getBogeyData();
             if (!(state.getBlock() instanceof UnlinkedBogeyBlock unlinkedBogeyBlock))
                 return InteractionResult.FAIL;

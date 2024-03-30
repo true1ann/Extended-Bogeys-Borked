@@ -55,7 +55,7 @@ public abstract class MixinAbstractBogeyBlock extends Block  {
 
         if (!level.isClientSide && !player.getCooldowns().isOnCooldown(heldItem.getItem()) && heldItem.is(Items.AIR)
                 && player.isShiftKeyDown()) {
-            player.getCooldowns().addCooldown(heldItem.getItem(), 20);
+            player.getCooldowns().addCooldown(heldItem.getItem(), 5);
             CompoundTag bogeyData = be.getBogeyData();
             if (!(state.getBlock() instanceof StandardBogeyBlock unlinkedBogeyBlock))
                 return;
