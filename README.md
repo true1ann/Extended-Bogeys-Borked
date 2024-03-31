@@ -22,6 +22,6 @@ Extended Bogeys used to provide its own API which has now been merged into Creat
 
 Extended Bogeys has a wiki detailing how you can integrate Extended Bogeys into your project as well as details on creating, rendering and customising your own bogey. You can find the docs <a href="https://github.com/Rabbitminers/Extended-Bogeys/wiki">Here</a>
 
-<img src="https://media.discordapp.net/attachments/1172800072237461604/1220649022134419456/2024-03-22_02.22.45.png?ex=660fb4fd&is=65fd3ffd&hm=15b5185bc861cff40ca1357d5f98a0317bc6b139d71931dd1e4b11a886bbda0e&=&format=webp&quality=lossless&width=1276&height=676"
+<img src="https://media.discordapp.net/attachments/894751374372405329/1223907133213507674/2024-03-31_02.png?ex=661b8f57&is=66091a57&hm=953aaa8896e227656e8949c00fd447a3b9f46d41bdc4fe9ec63c47f70fb2584e&=&format=webp&quality=lossless&width=1276&height=676"
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
