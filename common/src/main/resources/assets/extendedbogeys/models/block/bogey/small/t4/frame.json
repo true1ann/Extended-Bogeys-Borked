@@ -1,0 +1,15 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "porting_lib:loader": "porting_lib:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/small/t4/frame.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/small/t4/frame2",
+        "1": "extendedbogeys:block/bogey/small/t4/small_trailing_bogey_outer",
+        "2": "extendedbogeys:block/bogey/small/t4/frame",
+        "3": "extendedbogeys:block/bogey/small/t4/trailing_bogey_base",
+        "4": "extendedbogeys:block/bogey/wheel",
+        "5": "extendedbogeys:block/bogey/small/t4/axis"
+    }
+}

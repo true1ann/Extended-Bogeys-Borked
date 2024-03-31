@@ -1,0 +1,19 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "porting_lib:loader": "porting_lib:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/extra_large/xl6_create/frame.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/extra_large/xl6_create/broad_piston2",
+        "1": "extendedbogeys:block/bogey/extra_large/xl6_create/piston",
+        "2": "extendedbogeys:block/bogey/extra_large/xl6_create/support",
+        "3": "extendedbogeys:block/bogey/extra_large/xl6_create/trailing_bogey_base",
+        "4": "extendedbogeys:block/bogey/extra_large/xl6_create/broad_support",
+        "5": "extendedbogeys:block/bogey/extra_large/xl6_create/frame",
+        "6": "extendedbogeys:block/bogey/extra_large/xl6_create/wheel",
+        "7": "extendedbogeys:block/bogey/extra_large/xl6_create/axis",
+        "8": "extendedbogeys:block/bogey/extra_large/xl6_create/small_frame",
+        "9": "extendedbogeys:block/bogey/extra_large/xl6_create/xl_belts"
+    }
+}

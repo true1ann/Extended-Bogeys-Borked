@@ -10,6 +10,7 @@ import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.content.trains.bogey.BogeyRenderer;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.entity.CarriageBogey;
+import com.simibubi.create.foundation.utility.AngleHelper;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -63,7 +64,40 @@ public class QuintupleAxleBogeyRenderer {
             }
         }
     }
+//Small 0-10-0 Standard
+    public static class SmallQuintupleAxleBogeyRenderer extends BogeyRenderer {
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, SMALL_SHARED_WHEELS_PINS, 5);
+            createModelInstance(materialManager, SMALL_STANDARD_10_FRAME);
+        }
 
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return BogeySizes.SMALL;
+        }
+
+        @Override
+        public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+
+            getTransform(SMALL_STANDARD_10_FRAME, ms, inInstancedContraption)
+                    .render(ms, light, vb);
+
+            BogeyModelData[] wheels = getTransform(SMALL_SHARED_WHEELS_PINS, ms, inInstancedContraption, 5);
+            for (int side = -1; side < 4; side++) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
+                BogeyModelData wheel = wheels[side + 1];
+                wheel.translate(0, 0.75, -1 +  side)
+                        .rotateX(wheelAngle)
+                        .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
+            }
+        }
+    }
+//Large 0-10-0 (long)
     public static class LargeQuintupleAxleLongBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 
         @Override
@@ -191,7 +225,7 @@ public class QuintupleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
-
+//Large 0-10-0 (short)
     public static class LargeQuintupleAxleShortBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 
         @Override
@@ -313,6 +347,84 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
+        }
+    }
+//Large 0-10-0 Scotch Yoke
+public static class LargeQuintupleAxleBogeyRenderer extends BogeyRenderer {
+    @Override
+    public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+        createModelInstance(materialManager, CREATE_LARGE_SHARED_WHEELS, 2);
+        createModelInstance(materialManager, CREATE_LARGE_SHARED_WHEELS_SEMI_BLIND, 2);
+        createModelInstance(materialManager, CREATE_LARGE_SHARED_WHEELS_BLIND);
+        createModelInstance(materialManager, CREATE_LARGE_10_FRAME);
+        createModelInstance(materialManager, CREATE_LARGE_10_PINS_RIGHT);
+        createModelInstance(materialManager, CREATE_LARGE_10_PINS_LEFT);
+        createModelInstance(materialManager, CREATE_LARGE_10_PISTON_RIGHT);
+        createModelInstance(materialManager, CREATE_LARGE_10_PISTON_LEFT);
+    }
+
+    @Override
+    public BogeySizes.BogeySize getSize() {
+        return BogeySizes.LARGE;
+    }
+
+    @Override
+    public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+        boolean inInstancedContraption = vb == null;
+
+        getTransform(CREATE_LARGE_10_FRAME, ms, inInstancedContraption)
+                .render(ms, light, vb);
+
+        BogeyModelData[] wheels2 = getTransform(CREATE_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption, 2);
+        for (int side1 : Iterate.positiveAndNegative) {
+            if (!inInstancedContraption)
+                ms.pushPose();
+            BogeyModelData wheel2 = wheels2[(side1 + 1) / 2];
+            wheel2.translate(0, 1, side1 * 1.6875)
+                    .rotateX(wheelAngle)
+                    .render(ms, light, vb);
+            if (!inInstancedContraption)
+                ms.popPose();
+        }
+
+        BogeyModelData[] wheels = getTransform(CREATE_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
+        for (int side2 : Iterate.positiveAndNegative) {
+            if (!inInstancedContraption)
+                ms.pushPose();
+            BogeyModelData wheel = wheels[(side2 + 1) / 2];
+            wheel.translate(0, 1, side2 * 3.375)
+                    .rotateX(wheelAngle)
+                    .render(ms, light, vb);
+            if (!inInstancedContraption)
+                ms.popPose();
+        }
+
+        getTransform(CREATE_LARGE_SHARED_WHEELS_BLIND, ms, inInstancedContraption)
+                .translate(0,1,0)
+                .rotateX(wheelAngle)
+                .render(ms, light, vb);
+
+        getTransform(CREATE_LARGE_10_PISTON_LEFT, ms, inInstancedContraption)
+                .translate(0, 1, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle)))
+                .render(ms, light, vb);
+
+        getTransform(CREATE_LARGE_10_PISTON_RIGHT, ms, inInstancedContraption)
+                .translate(0, 1, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle + 180)))
+                .render(ms, light, vb);
+
+        getTransform(CREATE_LARGE_10_PINS_LEFT, ms, inInstancedContraption)
+                .translate(0, 1, 0)
+                .rotateX(wheelAngle)
+                .translate(0, 1 / 4f, 0)
+                .rotateX(-wheelAngle)
+                .render(ms, light, vb);
+
+        getTransform(CREATE_LARGE_10_PINS_RIGHT, ms, inInstancedContraption)
+                .translate(0, 1, 0)
+                .rotateX(wheelAngle + 180)
+                .translate(0, 1 / 4f, 0)
+                .rotateX(-wheelAngle - 180)
+                .render(ms, light, vb);
         }
     }
 }

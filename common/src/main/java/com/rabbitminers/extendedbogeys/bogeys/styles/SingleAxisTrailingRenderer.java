@@ -54,4 +54,30 @@ public class SingleAxisTrailingRenderer {
                     .render(ms, light, vb);
         }
     }
+//Small 0-2-0 Trailing
+    public static class SmallSingleAxisTrailingRenderer extends BogeyRenderer {
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, SMALL_SHARED_WHEELS);
+            createModelInstance(materialManager, SMALL_TRAILING_2_FRAME);
+        }
+
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return BogeySizes.SMALL;
+        }
+
+        @Override
+        public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+
+            getTransform(SMALL_TRAILING_2_FRAME, ms, inInstancedContraption)
+                    .render(ms, light, vb);
+
+            getTransform(SMALL_SHARED_WHEELS, ms, inInstancedContraption)
+                    .translate(0, 0.75, 0)
+                    .rotateX(wheelAngle)
+                    .render(ms, light, vb);
+        }
+    }
 }
