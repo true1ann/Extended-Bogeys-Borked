@@ -6,8 +6,8 @@
     "textures": {
         "0": "extendedbogeys:block/bogey/medium/tender_bogey_outer",
         "1": "extendedbogeys:block/bogey/medium/trailing_bogey_outer",
-        "2": "extendedbogeys:block/bogey/trailing_bogey_base",
-        "3": "extendedbogeys:block/bogey/frame",
+        "2": "extendedbogeys:block/bogey/medium/trailing_bogey_base",
+        "3": "extendedbogeys:block/bogey/medium/frame",
         "4": "extendedbogeys:block/bogey/medium/trailing_bogey_base2"
     },
     "porting_lib:loader": "porting_lib:obj"

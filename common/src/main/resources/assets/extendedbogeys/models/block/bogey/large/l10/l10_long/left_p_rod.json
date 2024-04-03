@@ -4,7 +4,7 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/large/l10/l10_long/left_p_rod.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/large/l10/xl_textures"
+        "0": "extendedbogeys:block/bogey/large/xl_textures"
     },
     "porting_lib:loader": "porting_lib:obj"
 }

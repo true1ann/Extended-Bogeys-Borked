@@ -5,6 +5,6 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/extra_large/xl4_create/left_pins.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/extra_large/xl4_create/broad_piston2"
+        "0": "extendedbogeys:block/bogey/extra_large/broad_piston2"
     }
 }

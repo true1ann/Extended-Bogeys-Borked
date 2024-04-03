@@ -5,14 +5,14 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/large/l6/l6_short/frame.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/large/l6/frame",
-        "1": "extendedbogeys:block/bogey/large/l6/piston",
-        "2": "extendedbogeys:block/bogey/large/l6/support",
-        "3": "extendedbogeys:block/bogey/large/l6/extras",
-        "4": "extendedbogeys:block/bogey/large/l6/xl_belts",
-        "5": "extendedbogeys:block/bogey/large/l6/trailing_bogey_base",
-        "6": "extendedbogeys:block/bogey/large/l6/wheel",
-        "7": "extendedbogeys:block/bogey/large/l6/xl_textures",
-        "8": "extendedbogeys:block/bogey/large/l6/axis"
+        "0": "extendedbogeys:block/bogey/large/frame",
+        "1": "extendedbogeys:block/bogey/large/piston",
+        "2": "extendedbogeys:block/bogey/large/support",
+        "3": "extendedbogeys:block/bogey/large/extras",
+        "4": "extendedbogeys:block/bogey/large/xl_belts",
+        "5": "extendedbogeys:block/bogey/large/trailing_bogey_base",
+        "6": "extendedbogeys:block/bogey/wheel",
+        "7": "extendedbogeys:block/bogey/large/xl_textures",
+        "8": "extendedbogeys:block/bogey/axis"
     }
 }

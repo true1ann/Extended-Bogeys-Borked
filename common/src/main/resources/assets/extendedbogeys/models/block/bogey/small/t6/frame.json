@@ -5,12 +5,12 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/small/t6/frame.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/small/t6/single_axle_body",
-        "1": "extendedbogeys:block/bogey/small/t6/frame2",
-        "2": "extendedbogeys:block/bogey/small/t6/small_trailing_bogey_outer",
-        "3": "extendedbogeys:block/bogey/small/t6/frame",
-        "4": "extendedbogeys:block/bogey/small/t6/axis",
-        "5": "extendedbogeys:block/bogey/small/t6/trailing_bogey_base",
+        "0": "extendedbogeys:block/bogey/small/single_axle_body",
+        "1": "extendedbogeys:block/bogey/small/frame2",
+        "2": "extendedbogeys:block/bogey/small/small_trailing_bogey_outer",
+        "3": "extendedbogeys:block/bogey/small/frame",
+        "4": "extendedbogeys:block/bogey/axis",
+        "5": "extendedbogeys:block/bogey/small/trailing_bogey_base",
         "6": "extendedbogeys:block/bogey/wheel"
     }
 }

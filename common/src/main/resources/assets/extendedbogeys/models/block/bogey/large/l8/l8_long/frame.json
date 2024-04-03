@@ -4,14 +4,14 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/large/l8/l8_long/frame.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/large/l8/xl_textures",
-        "1": "extendedbogeys:block/bogey/large/l8/extras",
-        "2": "extendedbogeys:block/bogey/large/l8/piston",
-        "3": "extendedbogeys:block/bogey/large/l8/xl_belts",
-        "4": "extendedbogeys:block/bogey/large/l8/frame",
-        "5": "extendedbogeys:block/bogey/large/l8/wheel",
-        "6": "extendedbogeys:block/bogey/large/l8/trailing_bogey_base",
-        "7": "extendedbogeys:block/bogey/large/l8/axis"
+        "0": "extendedbogeys:block/bogey/large/xl_textures",
+        "1": "extendedbogeys:block/bogey/large/extras",
+        "2": "extendedbogeys:block/bogey/large/piston",
+        "3": "extendedbogeys:block/bogey/large/xl_belts",
+        "4": "extendedbogeys:block/bogey/large/frame",
+        "5": "extendedbogeys:block/bogey/wheel",
+        "6": "extendedbogeys:block/bogey/large/trailing_bogey_base",
+        "7": "extendedbogeys:block/bogey/axis"
     },
     "porting_lib:loader": "porting_lib:obj"
 }

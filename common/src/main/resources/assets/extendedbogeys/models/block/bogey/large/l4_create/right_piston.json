@@ -5,7 +5,7 @@
     "flip_v": true,
     "model": "extendedbogeys:models/block/bogey/large/l4_create/right_piston.obj",
     "textures": {
-        "0": "extendedbogeys:block/bogey/large/l4_create/create_piston_rods",
-        "1": "extendedbogeys:block/bogey/large/l4_create/piston"
+        "0": "extendedbogeys:block/bogey/large/create_piston_rods",
+        "1": "extendedbogeys:block/bogey/large/piston"
     }
 }
