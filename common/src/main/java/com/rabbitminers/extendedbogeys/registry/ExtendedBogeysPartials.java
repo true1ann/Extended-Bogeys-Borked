@@ -86,6 +86,16 @@ public class ExtendedBogeysPartials {
     LARGE_6_LEFT_P_ROD_SHORT = block("bogey/large/l6/l6_short/left_p_rod"),
     LARGE_6_RIGHT_P_ROD_SHORT = block("bogey/large/l6/l6_short/right_p_rod"),
 
+//Large Extended 0-6-0 Long
+    LARGE_6E_FRAME_LONG = block("bogey/large/l6/l6e_long/frame"),
+
+//Large Extended 0-6-0 Connecting Rods
+    LARGE_6E_SHARED_LEFT_C_ROD = block("bogey/large/l6/l6e_shared/left_c_rod"),
+    LARGE_6E_SHARED_RIGHT_C_ROD = block("bogey/large/l6/l6e_shared/right_c_rod"),
+
+//Large Extended 0-6-0 Short
+    LARGE_6E_FRAME_SHORT = block("bogey/large/l6/l6e_short/frame"),
+
 //Large 0-8-0 Long
     LARGE_8_FRAME_LONG = block("bogey/large/l8/l8_long/frame"),
     LARGE_8_LEFT_C_ROD_LONG = block("bogey/large/l8/l8_long/left_c_rod"),
@@ -157,6 +167,16 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_6_RIGHT_M_ROD_SHORT = block("bogey/extra_large/xl6/xl6_short/right_m_rod"),
     EXTRA_LARGE_6_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl6/xl6_short/left_p_rod"),
     EXTRA_LARGE_6_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl6/xl6_short/right_p_rod"),
+
+//Extra Large Extended 0-6-0 Long
+    EXTRA_LARGE_6E_FRAME_LONG = block("bogey/extra_large/xl6/xl6e_long/frame"),
+
+//Extra Large Extended 0-6-0 Connecting Rods
+    EXTRA_LARGE_6E_SHARED_LEFT_C_ROD = block("bogey/extra_large/xl6/xl6e_shared/left_c_rod"),
+    EXTRA_LARGE_6E_SHARED_RIGHT_C_ROD = block("bogey/extra_large/xl6/xl6e_shared/right_c_rod"),
+
+//Extra Large Extended 0-6-0 Short
+    EXTRA_LARGE_6E_FRAME_SHORT = block("bogey/extra_large/xl6/xl6e_short/frame"),
 
 //Extra Large 0-8-0 Long
     EXTRA_LARGE_8_FRAME_LONG = block("bogey/extra_large/xl8/xl8_long/frame"),
