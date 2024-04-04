@@ -1,27 +1,47 @@
 
 <h1 align="center">Extended Bogeys  <br>
-	<a href="https://www.curseforge.com/minecraft/mc-mods/create-extended-bogeys/files"><img src="https://img.shields.io/badge/Available%20for-MC%201.18.2 TO 1.19.2-c70039" alt="Supported Versions"></a>
-    <a href="https://www.curseforge.com/minecraft/mc-mods/create-extended-bogeys"><img src="http://cf.way2muchnoise.eu/-.svg" alt="CF"></a>
+	<a href="https://www.curseforge.com/minecraft/mc-mods/create-extended-bogeys/files"><img src="https://img.shields.io/badge/Available%20For-MC%201.20.1-c70039" alt="Supported Versions"></a>
 	<a href="https://github.com/Rabbitminers/Extended-Bogeys/blob/rewrite/LICENSE"><img src="https://img.shields.io/github/license/Rabbitminers/Extended-Bogeys?style=flat&color=900c3f" alt="License"></a>
 	<a href="https://discord.gg/create-addon-hub-891929048895356948"><img src="https://img.shields.io/discord/891929048895356948?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
 </h1>
 
 # Extended Bogeys
-[Forge & Fabric 1.18.2 & 1.19.2] A forge mod to add new bogey types to the Create Mod as well as providing a simple API for other mods to add their own easily and without conflict
+[Forge & Fabric 1.18.2 & 1.19.2] A forge mod to add new bogey types to the [Create Mod](https://modrinth.com/mod/create)
 
 ## Features
-Extended Bogeys primarily adds new types of bogey as well as an Interface for other mods to do the same, on top of this a new Unlinked bogey as been added allowing for more than two bogeys per carriage. Configurably, (disabled by default) speed, acceleration and minimum turn radii can be applied to each bogey making each one more unique.
+#### Currently includes a large amount of custom bogeys
+- Bogeys added:
+	- Large Drivers: **_0-4-0 to 0-10-0_**
+ 	- Extra Large Drivers: **_0-4-0 to 0-8-0_**
+	- Large Create Styled (scotch yoke) Drivers: **_0-4-0 to 0-10-0_**
+	- Extra Large Create (scotch yoke) Styled Drivers: **_0-2-0 to 0-8-0_**
+ 	- Medium Trailing Bogeys: **_0-2-0 to 0-6-0_**
+	- Small Trailing Bogeys: **_0-2-0 to 0-6-0_**
+	- Medium Tender Bogeys: **_0-6-0 to 0-10-0_**
+ 	- Medium Standard Bogeys: **_0-4-0 to 0-10-0_**
+	- Small Standard Bogeys: **_0-6-0 to 0-10-0_**
+ 
+#### Bogeys can be rotated when right clicked with an empty hand, useful for a variety of builds
+- Bogeys that rotate:
+	- Large Drivers
+   	- Extra Large Drivers
 
-A complete list of both features and styles both implemented and planned can be found <a href="https://github.com/Rabbitminers/Extended-Bogeys/blob/rewrite/TODO.md">Here</a> please feel free to make any requests at the contacts above.
+#### You can also unlink bogeys by crouch right clicking the top of the bogey, unlinking allows for a bogey to be seperated from the track and can be glued onto a train like a normal block
+- Bogeys that are able to be unlinked (extra large is currently not working):
+  	- Small Bogeys
+  	- Medium Bogeys
+  	- Large Bogeys
+___
+#### Showcase
 
-## How can I add my own bogey?
-
-Extended Bogeys used to provide its own API which has now been merged into Create as of 0.5.1 documentation for this can be found [Here](Its not there yet)
-
-#### Legacy
-
-Extended Bogeys has a wiki detailing how you can integrate Extended Bogeys into your project as well as details on creating, rendering and customising your own bogey. You can find the docs <a href="https://github.com/Rabbitminers/Extended-Bogeys/wiki">Here</a>
+An image of the currently added bogeys:
 
 <img src="https://media.discordapp.net/attachments/894751374372405329/1223907133213507674/2024-03-31_02.png?ex=661b8f57&is=66091a57&hm=953aaa8896e227656e8949c00fd447a3b9f46d41bdc4fe9ec63c47f70fb2584e&=&format=webp&quality=lossless&width=1276&height=676"
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
+
+## Disclaimer
+ - **_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minercaft modding)._**
+**_Meaning, that some issue may take longer than usual to fix, but I am and will be actively maintaining this fork until a stable official release for EB comes out_**
+
+ - **If you have any issues, please use the issue tracker, or message Weido's Oddites on discord (dont bug the main devs, that won't fix the issues)**
