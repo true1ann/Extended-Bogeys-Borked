@@ -1,4 +1,12 @@
-# Made in Blockbench 4.9.4
-newmtl m_647a5394-0028-91ee-b79f-c60b1a88fde7
+# Blender 4.1.0 MTL File: 'None'
+# www.blender.org
+
+newmtl m_ec6f6917-f447-215e-ebd8-0b7cdc5ce34d.003
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
 map_Kd #0
-newmtl none
