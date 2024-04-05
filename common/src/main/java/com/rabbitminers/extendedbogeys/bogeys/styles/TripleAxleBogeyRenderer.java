@@ -367,7 +367,7 @@ public class TripleAxleBogeyRenderer {
             double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.09));
 //______________________________________________________________________________________________________________________
             //Frame
-            getTransform(LARGE_6_FRAME_LONG, ms, inInstancedContraption)
+            getTransform(LARGE_6E_FRAME_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
