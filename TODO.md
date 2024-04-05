@@ -69,8 +69,8 @@ Trailing Style:
 - 
 Tender Style:
 - ☒ [ M ] 0-6-0
-- ☐ [ S ] 0-6-0
+- ☐ [ S ] 0-6-0 | _**might not be implemented**_
 - ☒ [ M ] 0-8-0
-- ☐ [ S ] 0-8-0
+- ☐ [ S ] 0-8-0 | _**might not be implemented**_
 - ☒ [ M ] 0-10-0
-- ☐ S 0-10-0
+- ☐ S 0-10-0 | _**might not be implemented**_
