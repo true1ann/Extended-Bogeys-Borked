@@ -69,7 +69,7 @@ public class TripleAxleBogeyRenderer {
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, SMALL_SHARED_WHEELS_PINS, 3);
-            createModelInstance(materialManager, SMALL_TRAILING_6_FRAME);
+            createModelInstance(materialManager, SMALL_STANDARD_6_FRAME);
         }
 
         @Override
