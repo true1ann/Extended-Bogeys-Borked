@@ -7,7 +7,7 @@
 </h1>
 
 # Extended Bogeys
-[Forge & Fabric 1.20.1] A mod to add many new bogey types to the [Create Mod](https://modrinth.com/mod/create)
+[Forge & Fabric 1.20.1] A mod that adds many new bogey types to the [Create Mod](https://modrinth.com/mod/create)
 
 ## Features
 #### Currently includes a large amount of custom bogeys
