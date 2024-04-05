@@ -36,7 +36,7 @@ ___
 
 An image of the currently added bogeys:
 
-<img src="https://media.discordapp.net/attachments/894751374372405329/1223907133213507674/2024-03-31_02.png?ex=661b8f57&is=66091a57&hm=953aaa8896e227656e8949c00fd447a3b9f46d41bdc4fe9ec63c47f70fb2584e&=&format=webp&quality=lossless&width=1276&height=676"
+<img src="https://media.discordapp.net/attachments/700523488951402548/1225623151455633408/2024-04-04_19.48.31.png?ex=6621cd82&is=660f5882&hm=bcf3e1f25de0ae277578425c23be4eb1ad4b96175b60c4491710aef64e92a1af&=&format=webp&quality=lossless&width=1276&height=676"
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
 
