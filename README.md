@@ -23,7 +23,7 @@
 	- Small Standard Bogeys: **_0-6-0 to 0-10-0_**
  
 #### Bogeys can be rotated when right clicked with an empty hand, useful for a variety of builds
-- Bogeys that rotate:
+- Bogeys that are able to rotate:
 	- Large Drivers
    	- Extra Large Drivers
 
