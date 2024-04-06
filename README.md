@@ -33,6 +33,10 @@
   	- Medium Bogeys
   	- Large Bogeys
 ___
+
+## Download
+You can download the latest version **[here](https://github.com/WeidosOddities/Extended-Bogeys-Borked/releases)**
+___
 #### Showcase
 
 An image of the currently added bogeys:
