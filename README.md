@@ -45,4 +45,4 @@ An image of the currently added bogeys:
  - **_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minercaft modding)._**
 **_Meaning, that some issue may take longer than usual to fix, but I am and will be actively maintaining this fork until a stable official release for EB comes out_**
 
- - **If you have any issues, please use the issue tracker, or message Weido's Oddites on discord (dont bug the main devs, that won't fix the issues)**
+ - **If you have any issues, please use the issue tracker, or message @weidos.oddities (me) on discord (dont bug the main devs, that won't resolve the issues)**
