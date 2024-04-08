@@ -13,7 +13,6 @@ public class ExtendedBogeysPartials {
 //Standard Wheels
     SMALL_SHARED_WHEELS = block("bogey/small/shared/wheels"),
     SMALL_SHARED_WHEELS_PINS = block("bogey/small/shared/wheels_pins"),
-    MEDIUM_SHARED_WHEELS = block("bogey/medium/shared/wheels"),
     LARGE_SHARED_WHEELS = block("bogey/large/shared/wheels"),
     LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/large/shared/wheels_semi_blind"),
     LARGE_SHARED_WHEELS_BLIND = block("bogey/large/shared/wheels_blind"),
@@ -21,25 +20,8 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/extra_large/shared/wheels_semi_blind"),
 
 //Scotch Yoke Wheels
-    CREATE_LARGE_SHARED_WHEELS = block("bogey/large/shared/wheels_create"),
-    CREATE_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/large/shared/wheels_semi_blind_create"),
-    CREATE_LARGE_SHARED_WHEELS_BLIND = block("bogey/large/shared/wheels_blind_create"),
     CREATE_EXTRA_LARGE_SHARED_WHEELS = block("bogey/extra_large/shared/wheels_create"),
     CREATE_EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/extra_large/shared/wheels_semi_blind_create"),
-
-//Medium Stuff...
-    MEDIUM_STANDARD_FRAME = block("bogey/medium/standard/frame"),
-    MEDIUM_SINGLE_WHEEL_FRAME = block("bogey/medium/single_wheel/frame"),
-    MEDIUM_TRIPLE_WHEEL_FRAME = block("bogey/medium/triple_wheel/frame"),
-    MEDIUM_QUADRUPLE_WHEEL_FRAME = block("bogey/medium/quadruple_wheel/frame"),
-    MEDIUM_QUINTUPLE_WHEEL_FRAME = block("bogey/medium/quintuple_wheel/frame"),
-
-    MEDIUM_2_0_2_TRAILING_FRAME = block("bogey/medium/2-0-2_trailing/frame"),
-    MEDIUM_4_0_4_TRAILING_FRAME = block("bogey/medium/4-0-4_trailing/frame"),
-    MEDIUM_6_0_6_TRAILING_FRAME = block("bogey/medium/6-0-6_trailing/frame"),
-    MEDIUM_6_0_6_TENDER_FRAME = block("bogey/medium/6-0-6_tender/frame"),
-    MEDIUM_8_0_8_TENDER_FRAME = block("bogey/medium/8-0-8_tender/frame"),
-    MEDIUM_10_0_10_TENDER_FRAME = block("bogey/medium/10-0-10_tender/frame"),
 
 //Small Stuff...
     SMALL_STANDARD_6_FRAME = block("bogey/small/s6/frame"),
@@ -196,34 +178,6 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_8_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/left_p_rod"),
     EXTRA_LARGE_8_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/right_p_rod"),
 
-//Large Scotch Yoke 0-4-0
-    CREATE_LARGE_4_FRAME = block("bogey/large/l4_create/frame"),
-    CREATE_LARGE_4_PINS_RIGHT = block("bogey/large/l4_create/right_pins"),
-    CREATE_LARGE_4_PINS_LEFT = block("bogey/large/l4_create/left_pins"),
-    CREATE_LARGE_4_PISTON_RIGHT = block("bogey/large/l4_create/right_piston"),
-    CREATE_LARGE_4_PISTON_LEFT = block("bogey/large/l4_create/left_piston"),
-
-//Large Scotch Yoke 0-6-0
-    CREATE_LARGE_6_FRAME = block("bogey/large/l6_create/frame"),
-    CREATE_LARGE_6_PINS_RIGHT = block("bogey/large/l6_create/right_pins"),
-    CREATE_LARGE_6_PINS_LEFT = block("bogey/large/l6_create/left_pins"),
-    CREATE_LARGE_6_PISTON_RIGHT = block("bogey/large/l6_create/right_piston"),
-    CREATE_LARGE_6_PISTON_LEFT = block("bogey/large/l6_create/left_piston"),
-
-//Large Scotch Yoke 0-8-0
-    CREATE_LARGE_8_FRAME = block("bogey/large/l8_create/frame"),
-    CREATE_LARGE_8_PINS_RIGHT = block("bogey/large/l8_create/right_pins"),
-    CREATE_LARGE_8_PINS_LEFT = block("bogey/large/l8_create/left_pins"),
-    CREATE_LARGE_8_PISTON_RIGHT = block("bogey/large/l8_create/right_piston"),
-    CREATE_LARGE_8_PISTON_LEFT = block("bogey/large/l8_create/left_piston"),
-
-//Large Scotch Yoke 0-10-0
-    CREATE_LARGE_10_FRAME = block("bogey/large/l10_create/frame"),
-    CREATE_LARGE_10_PINS_RIGHT = block("bogey/large/l10_create/right_pins"),
-    CREATE_LARGE_10_PINS_LEFT = block("bogey/large/l10_create/left_pins"),
-    CREATE_LARGE_10_PISTON_RIGHT = block("bogey/large/l10_create/right_piston"),
-    CREATE_LARGE_10_PISTON_LEFT = block("bogey/large/l10_create/left_piston"),
-
 //Extra Large Scotch Yoke 0-2-0
     CREATE_EXTRA_LARGE_2_FRAME = block("bogey/extra_large/xl2_create/frame"),
     CREATE_EXTRA_LARGE_2_PINS_RIGHT = block("bogey/extra_large/xl2_create/right_pins"),
@@ -231,7 +185,7 @@ public class ExtendedBogeysPartials {
     CREATE_EXTRA_LARGE_2_PISTON_RIGHT = block("bogey/extra_large/xl2_create/right_piston"),
     CREATE_EXTRA_LARGE_2_PISTON_LEFT = block("bogey/extra_large/xl2_create/left_piston"),
 
-    //Extra Large Scotch Yoke 0-4-0
+//Extra Large Scotch Yoke 0-4-0
     CREATE_EXTRA_LARGE_4_FRAME = block("bogey/extra_large/xl4_create/frame"),
     CREATE_EXTRA_LARGE_4_PINS_RIGHT = block("bogey/extra_large/xl4_create/right_pins"),
     CREATE_EXTRA_LARGE_4_PINS_LEFT = block("bogey/extra_large/xl4_create/left_pins"),
@@ -256,13 +210,6 @@ public class ExtendedBogeysPartials {
     private static PartialModel block(String path) {
         return new PartialModel(ExtendedBogeys.asResource("block/" + path));
     }
-
-    private static PartialModel entity(String path) {
-        return new PartialModel(ExtendedBogeys.asResource("entity/" + path));
-    }
-
-
-
     public static void init() {
 
     }

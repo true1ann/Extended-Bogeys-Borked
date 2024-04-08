@@ -1,6 +1,5 @@
 package com.rabbitminers.extendedbogeys.mixin;
 
-import com.rabbitminers.extendedbogeys.bogeys.styles.StandardBogeyRenderer.MediumStandardBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.StandardBogeyRenderer.ExtraLargeStandardBogeyRenderer;
 import com.rabbitminers.extendedbogeys.data.ExtendedBogeysBogeySize;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBlocks;
@@ -24,7 +23,6 @@ public class MixinAllBogeyStyles {
     )
     private static BogeyStyle test(BogeyStyleBuilder builder) {
         return builder
-                .size(ExtendedBogeysBogeySizes.MEDIUM, () -> MediumStandardBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.MEDIUM))
                 .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeStandardBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
                 .build();
     }

@@ -442,63 +442,6 @@ public class DoubleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
-//Large 0-4-0 Scotch Yoke
-    public static class LargeDoubleAxleBogeyRenderer extends BogeyRenderer {
-        @Override
-        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
-            createModelInstance(materialManager, CREATE_LARGE_SHARED_WHEELS, 2);
-            createModelInstance(materialManager, CREATE_LARGE_4_FRAME);
-            createModelInstance(materialManager, CREATE_LARGE_4_PINS_RIGHT);
-            createModelInstance(materialManager, CREATE_LARGE_4_PINS_LEFT);
-            createModelInstance(materialManager, CREATE_LARGE_4_PISTON_RIGHT);
-            createModelInstance(materialManager, CREATE_LARGE_4_PISTON_LEFT);
-        }
-
-        @Override
-        public BogeySizes.BogeySize getSize() { return BogeySizes.LARGE; }
-
-        @Override
-        public void render(CompoundTag bogeyData, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
-            boolean inInstancedContraption = vb == null;
-
-            getTransform(CREATE_LARGE_4_FRAME, ms, inInstancedContraption)
-                    .render(ms, light, vb);
-
-            BogeyModelData[] wheels = getTransform(CREATE_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
-            for (int side1 : Iterate.positiveAndNegative) {
-                if (!inInstancedContraption)
-                    ms.pushPose();
-                BogeyModelData wheel = wheels[(side1 + 1) / 2];
-                wheel.translate(0, 1, side1 * 0.875)
-                        .rotateX(wheelAngle)
-                        .render(ms, light, vb);
-                if (!inInstancedContraption)
-                    ms.popPose();
-            }
-
-            getTransform(CREATE_LARGE_4_PISTON_LEFT, ms, inInstancedContraption)
-                    .translate(0, 1, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle)))
-                    .render(ms, light, vb);
-
-            getTransform(CREATE_LARGE_4_PISTON_RIGHT, ms, inInstancedContraption)
-                    .translate(0, 1, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle + 180)))
-                    .render(ms, light, vb);
-
-            getTransform(CREATE_LARGE_4_PINS_LEFT, ms, inInstancedContraption)
-                    .translate(0, 1, 0)
-                    .rotateX(wheelAngle)
-                    .translate(0, 1 / 4f, 0)
-                    .rotateX(-wheelAngle)
-                    .render(ms, light, vb);
-
-            getTransform(CREATE_LARGE_4_PINS_RIGHT, ms, inInstancedContraption)
-                    .translate(0, 1, 0)
-                    .rotateX(wheelAngle + 180)
-                    .translate(0, 1 / 4f, 0)
-                    .rotateX(-wheelAngle - 180)
-                    .render(ms, light, vb);
-        }
-    }
 //Extra Large 0-4-0 Scotch Yoke
     public static class ExtraLargeDoubleAxleBogeyRenderer extends BogeyRenderer {
         @Override
