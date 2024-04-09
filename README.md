@@ -14,12 +14,12 @@
 - Bogeys added:
 	- Large Drivers: **_0-4-0 to 0-10-0_**
  	- Extra Large Drivers: **_0-4-0 to 0-8-0_**
-	- Large Create Styled (scotch yoke) Drivers: **_0-4-0 to 0-10-0_**
-	- Extra Large Create (scotch yoke) Styled Drivers: **_0-2-0 to 0-8-0_**
- 	- Medium Trailing Bogeys: **_0-2-0 to 0-6-0_**
+	- **~Large Create Styled (scotch yoke) Drivers: _0-4-0 to 0-10-0_~** (Moved to SNR)
+	- Extra Large Create (scotch yoke) Styled Drivers: **_0-2-0 to 0-8-0_** 
+ 	- **~Medium Trailing Bogeys: _0-2-0 to 0-6-0_~** (Moved to SNR)
 	- Small Trailing Bogeys: **_0-2-0 to 0-6-0_**
-	- Medium Tender Bogeys: **_0-6-0 to 0-10-0_**
- 	- Medium Standard Bogeys: **_0-4-0 to 0-10-0_**
+	- **~Medium Tender Bogeys: _0-6-0 to 0-10-0_~** (Moved to SNR)
+ 	- **~Medium Standard Bogeys: _0-4-0 to 0-10-0_~** (Moved to SNR)
 	- Small Standard Bogeys: **_0-6-0 to 0-10-0_**
  
 #### Bogeys can be rotated when right clicked with an empty hand, useful for a variety of builds
@@ -30,7 +30,7 @@
 #### You can also unlink bogeys by crouch right clicking the top of the bogey, unlinking allows for a bogey to be seperated from the track and can be glued onto a train like a normal block
 - Bogeys that are able to be unlinked (extra large is currently not working):
   	- Small Bogeys
-  	- Medium Bogeys
+  	- **~Medium Bogeys~** (No longer supported)
   	- Large Bogeys
 ___
 
