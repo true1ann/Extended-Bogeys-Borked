@@ -40,37 +40,22 @@ Drivers:
 
 Create Style:
 - ☒ [ XL ] 0-2-0
-- ☒ [ L ] 0-4-0
 - ☒ [ XL ] 0-4-0
-- ☒ [ L ] 0-6-0
 - ☒ [ XL ] 0-6-0
-- ☒ [ L ] 0-8-0
 - ☒ [ XL ] 0-8-0
-- ☒ [ L ] 0-10-0
 - ☐ [ XL ] 0-10-0
 
 Standard Style:
-- ☒ [ M ] 0-2-0
-- ☒ [ M ] 0-4-0
-- ☒ [ M ] 0-6-0
 - ☒ [ S ] 0-6-0
-- ☒ [ M ] 0-8-0
 - ☒ [ S ] 0-8-0
-- ☒ [ M ] 0-10-0
 - ☒ [ S ] 0-10-0
 
 Trailing Style:
-- ☒ [ M ] 0-2-0
 - ☒ [ S ] 0-2-0
-- ☒ [ M ] 0-4-0
 - ☒ [ S ] 0-4-0
-- ☒ [ M ] 0-6-0
 - ☒ [ S ] 0-6-0
 - 
 Tender Style:
-- ☒ [ M ] 0-6-0
 - ☐ [ S ] 0-6-0 | _**might not be implemented**_
-- ☒ [ M ] 0-8-0
 - ☐ [ S ] 0-8-0 | _**might not be implemented**_
-- ☒ [ M ] 0-10-0
-- ☐ S 0-10-0 | _**might not be implemented**_
+- ☐ [ S ] 0-10-0 | _**might not be implemented**_
