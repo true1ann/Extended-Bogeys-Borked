@@ -16,7 +16,7 @@ These are given in the following format **Started  : Completed**
 ## Bogey Styles
 These are given in the following format [**Not Implemented : Implemented**]
 
-Sizes are given in this format [**S = Small : M = Medium : L = Large : XL = Extra Large**]
+Sizes are given in this format [**S = Small : L = Large : XL = Extra Large**]
 
 If you have any requests please contact us and ask. 
 
