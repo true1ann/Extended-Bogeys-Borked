@@ -114,6 +114,35 @@ public class ExtendedBogeysPartials {
     LARGE_10_LEFT_P_ROD_SHORT = block("bogey/large/l10/l10_short/left_p_rod"),
     LARGE_10_RIGHT_P_ROD_SHORT = block("bogey/large/l10/l10_short/right_p_rod"),
 
+//Large 0-12-0 Long
+    LARGE_12_FRAME_LONG = block("bogey/large/l12/l12_long/frame"),
+    LARGE_12_CENTER_M_ROD_LONG = block("bogey/large/l12/l12_long/center_m_rod"),
+    LARGE_12_CENTER_P_ROD_LONG = block("bogey/large/l12/l12_long/center_p_rod"),
+    LARGE_12_LEFT_C_ROD_LONG = block("bogey/large/l12/l12_long/left_c_rod"),
+    LARGE_12_RIGHT_C_ROD_LONG = block("bogey/large/l12/l12_long/right_c_rod"),
+    LARGE_12_LEFT_M_ROD_LONG = block("bogey/large/l12/l12_long/left_m_rod"),
+    LARGE_12_RIGHT_M_ROD_LONG = block("bogey/large/l12/l12_long/right_m_rod"),
+    LARGE_12_LEFT_P_ROD_LONG = block("bogey/large/l12/l12_long/left_p_rod"),
+    LARGE_12_RIGHT_P_ROD_LONG = block("bogey/large/l12/l12_long/right_p_rod"),
+
+//Large 0-12-0 Shared
+    LARGE_12_CENTER_SHAFT = block("bogey/large/l12/l12_shared/axis"),
+    LARGE_12_WHEELS = block("bogey/large/l12/l12_shared/wheels"),
+    LARGE_12_WHEELS_BLIND = block("bogey/large/l12/l12_shared/wheels_blind"),
+    LARGE_12_WHEELS_SEMI_BLIND = block("bogey/large/l12/l12_shared/wheels_semi_blind"),
+    LARGE_12_CENTER_WEIGHT = block("bogey/large/l12/l12_shared/center_weight"),
+
+//Large 0-12-0 Short
+    LARGE_12_FRAME_SHORT = block("bogey/large/l12/l12_short/frame"),
+    LARGE_12_CENTER_M_ROD_SHORT = block("bogey/large/l12/l12_short/center_m_rod"),
+    LARGE_12_CENTER_P_ROD_SHORT = block("bogey/large/l12/l12_short/center_p_rod"),
+    LARGE_12_LEFT_C_ROD_SHORT = block("bogey/large/l12/l12_short/left_c_rod"),
+    LARGE_12_RIGHT_C_ROD_SHORT = block("bogey/large/l12/l12_short/right_c_rod"),
+    LARGE_12_LEFT_M_ROD_SHORT = block("bogey/large/l12/l12_short/left_m_rod"),
+    LARGE_12_RIGHT_M_ROD_SHORT = block("bogey/large/l12/l12_short/right_m_rod"),
+    LARGE_12_LEFT_P_ROD_SHORT = block("bogey/large/l12/l12_short/left_p_rod"),
+    LARGE_12_RIGHT_P_ROD_SHORT = block("bogey/large/l12/l12_short/right_p_rod"),
+
 //Extra Large 0-4-0 Long
     EXTRA_LARGE_4_FRAME_LONG = block("bogey/extra_large/xl4/xl4_long/frame"),
     EXTRA_LARGE_4_LEFT_M_ROD_LONG = block("bogey/extra_large/xl4/xl4_long/left_m_rod"),

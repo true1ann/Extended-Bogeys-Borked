@@ -1,0 +1,12 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/large/l12/l12_shared/center_weight.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/axis",
+        "1": "extendedbogeys:block/bogey/axis_top",
+        "2": "extendedbogeys:block/bogey/large/xl_textures"
+    },
+    "porting_lib:loader": "porting_lib:obj"
+}
