@@ -189,7 +189,7 @@ public class SextupleBogeyRenderer {
             getTransform(LARGE_12_CENTER_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.375, -5.75)
-                    .rotateX(6.75)
+                    .rotateX(5.75)
                     .rotateX(forwards ? CenterMainRodRotateX : CenterMainRodRotateX180)
                     .translateZ(forwards ? CenterRodOffset : CenterRodOffset180)
                     .render(ms, light, vb);
