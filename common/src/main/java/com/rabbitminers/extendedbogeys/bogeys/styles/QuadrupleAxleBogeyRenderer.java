@@ -24,8 +24,6 @@ public class QuadrupleAxleBogeyRenderer {
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, SMALL_SHARED_WHEELS_PINS, 4);
             createModelInstance(materialManager, SMALL_STANDARD_8_FRAME);
-            createModelInstance(materialManager, AllBlocks.SHAFT.getDefaultState()
-                    .setValue(ShaftBlock.AXIS, Direction.Axis.Z), 4);
         }
 
         @Override
