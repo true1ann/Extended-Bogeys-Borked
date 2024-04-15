@@ -14,6 +14,8 @@ repositories {
     maven { url = "https://cursemaven.com" } // Forge Config API Port
     maven { url = "https://maven.cafeteria.dev/releases" } // Fake Player API
     maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } //Forge Config API Port
+    maven { url = "https://maven.ithundxr.dev/snapshots" }
     maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 }
 
@@ -29,6 +31,7 @@ dependencies {
     modCompileOnly("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}")
     // required for proper remapping and compiling
     modCompileOnly("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
+//    modCompileOnly("com.railwayteam.railways:Steam_Rails-common-1.20.1:1.6.2+common-mc1.20.1-build.1280")
 }
 
 sourceSets.main {

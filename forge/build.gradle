@@ -59,6 +59,8 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
+    maven { url = "https://maven.ithundxr.dev/snapshots" }
 }
 
 dependencies {
@@ -70,6 +72,11 @@ dependencies {
     modImplementation("com.simibubi.create:create-${minecraft_version}:${create_forge_version}:slim") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:${registrate_forge_version}")
     modImplementation("com.jozufozu.flywheel:flywheel-forge-${flywheel_forge_minecraft_version}:${flywheel_forge_version}")
+
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.5"))
+    implementation(include("io.github.llamalad7:mixinextras-forge:0.3.5"))
+
+//    modImplementation("com.railwayteam.railways:Steam_Rails-forge-1.20.1:1.6.2+forge-mc1.20.1-build.1280")
 }
 
 processResources {
