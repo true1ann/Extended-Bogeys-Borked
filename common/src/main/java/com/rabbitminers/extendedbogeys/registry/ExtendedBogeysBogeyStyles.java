@@ -143,12 +143,12 @@ public class ExtendedBogeysBogeyStyles {
             .size(BogeySizes.LARGE, () -> LargeQuintupleAxleShortBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
             .build();
 
-    public static final BogeyStyle SEXTUPLE_AXLE_LONG_BOGEY_LONG = create("sextuple_axle_long")
+    public static final BogeyStyle SEXTUPLE_AXLE_LONG_BOGEY = create("sextuple_axle_long")
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.sextuple_axle_long"))
             .size(BogeySizes.LARGE, () -> LargeSextupleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
             .build();
 
-    public static final BogeyStyle SEXTUPLE_AXLE_SHORT_BOGEY_SHORT = create("sextuple_axle_short")
+    public static final BogeyStyle SEXTUPLE_AXLE_SHORT_BOGEY = create("sextuple_axle_short")
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.sextuple_axle_short"))
             .size(BogeySizes.LARGE, () -> LargeSextupleAxleShortBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
             .build();
