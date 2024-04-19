@@ -17,11 +17,29 @@
   "extendedbogeys.tooltips.cleaned": "Cleaned Bogey!",
   "extendedbogeys.tooltips.already_cleaned": "This Bogey Is Already Clean!",
 
-  "extendedbogeys.bogeys.styles.single_axle": "Single Axle Bogey",
-  "extendedbogeys.bogeys.styles.double_axle": "Double Axle Bogey",
-  "extendedbogeys.bogeys.styles.triple_axle": "Triple Axle Bogey",
-
   "extendedbogeys.bogey.style.updated_style": "Updated style",
   "extendedbogeys.bogey.style.updated_style_and_size": "Updated style and size",
-  "extendedbogeys.bogey.style.no_other_sizes": "No other sizes"
+  "extendedbogeys.bogey.style.no_other_sizes": "No other sizes",
+
+  "extendedbogeys.bogeys.styles.single_axle_trailer": "Small 0-2-0 Trailing",
+  "extendedbogeys.bogeys.styles.double_axle_scotch_yoke": "Extra Large 0-4-0 Create Styled",
+  "extendedbogeys.bogeys.styles.double_axle_long": "0-4-0 Driver Long",
+  "extendedbogeys.bogeys.styles.double_axle_short": "0-4-0 Driver Short",
+  "extendedbogeys.bogeys.styles.double_axle_trailer": "Small 0-4-0 Trailing",
+  "extendedbogeys.bogeys.styles.triple_axle": "Small Triple Axle",
+  "extendedbogeys.bogeys.styles.triple_axle_scotch_yoke": "Extra Large 0-6-0 Create Styled",
+  "extendedbogeys.bogeys.styles.triple_axle_long": "0-6-0 Driver Long",
+  "extendedbogeys.bogeys.styles.triple_axle_short": "0-6-0 Driver Short",
+  "extendedbogeys.bogeys.styles.triple_extended_axle_long": "Extended 0-6-0 Driver Long",
+  "extendedbogeys.bogeys.styles.triple_extended_axle_short": "Extended 0-6-0 Driver Short",
+  "extendedbogeys.bogeys.styles.triple_axle_trailer": "Small 0-6-0 Trailing",
+  "extendedbogeys.bogeys.styles.quadruple_axle": "Small Quadruple Axle",
+  "extendedbogeys.bogeys.styles.quadruple_axle_scotch_yoke": "Extra Large 0-8-0 Create Styled",
+  "extendedbogeys.bogeys.styles.quadruple_axle_long": "0-8-0 Driver Long",
+  "extendedbogeys.bogeys.styles.quadruple_axle_short": "0-8-0 Driver Short",
+  "extendedbogeys.bogeys.styles.quintuple_axle": "Small Quintuple Axle",
+  "extendedbogeys.bogeys.styles.quintuple_axle_long": "0-10-0 Driver Long",
+  "extendedbogeys.bogeys.styles.quintuple_axle_short": "0-10-0 Driver Short",
+  "extendedbogeys.bogeys.styles.sextuple_axle_long": "0-12-0 Driver Long",
+  "extendedbogeys.bogeys.styles.sextuple_axle_short": "0-12-0 Driver Short"
 }
