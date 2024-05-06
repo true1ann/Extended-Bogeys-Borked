@@ -1,6 +1,6 @@
 
 <h1 align="center">Extended Bogeys  <br>
-	<a href="https://www.curseforge.com/minecraft/mc-mods/create-extended-bogeys/files"><img src="https://img.shields.io/badge/Available%20For-MC%201.20.1-c70039" alt="Supported Versions"></a>
+	<a href="https://github.com/WeidosOddities/Extended-Bogeys-Borked/releases"><img src="https://img.shields.io/badge/Available%20For-MC%201.20.1-c70039" alt="Supported Versions"></a>
 	<a href="https://github.com/Rabbitminers/Extended-Bogeys/blob/1.20.1/multiloader/dev/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-900c3f" alt="License"></a>
 	<a href="https://github.com/Rabbitminers/Extended-Bogeys/blob/1.20.1/multiloader/dev/LICENSE-ASSETS"><img src="https://img.shields.io/badge/Assets_License-CC_BY--NC--SA--4.0-red" alt="Assets License"></a>
 	<a href="https://discord.gg/create-addon-hub-891929048895356948"><img src="https://img.shields.io/discord/1069326955742244884?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
