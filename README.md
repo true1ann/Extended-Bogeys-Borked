@@ -13,7 +13,7 @@
 #### Currently includes a large amount of custom bogeys
 - Bogeys added:
 	- Large Drivers: **_0-4-0 to 0-10-0_**
- 	- Extra Large Drivers: **_0-4-0 to 0-8-0_**
+ 	- Extra Large Drivers: **_0-4-0 to 0-10-0_**
 	- Extra Large Create Styled Drivers: **_0-2-0 to 0-8-0_** 
 	- Small Trailing Bogeys: **_0-2-0 to 0-6-0_**
 	- Small Standard Bogeys: **_0-6-0 to 0-10-0_**
@@ -36,19 +36,21 @@ You can download the latest version **[here](https://github.com/WeidosOddities/E
 ___
 #### Showcase
 
-An image of the currently added bogeys:
+Showcase of what can be made with Chipped, Create, Create: Copycats+, Create: Deco, Create: Design & Decor, Create: Steam n' Rails, and Extended Bogeys:
 
-<img src="https://media.discordapp.net/attachments/700523488951402548/1225623151455633408/2024-04-04_19.48.31.png?ex=6621cd82&is=660f5882&hm=bcf3e1f25de0ae277578425c23be4eb1ad4b96175b60c4491710aef64e92a1af&=&format=webp&quality=lossless&width=1276&height=676"
+<img src="https://media.discordapp.net/attachments/1233572646675943465/1236970520881139742/2024-05-06_02.png?ex=6639f211&is=6638a091&hm=1e09ed19ad088be29b6494b1a12a1a49f08ba9bc10801fc2c550715b615ef6f5&"
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
 ## License
-Extended Bogeys is lisenced under the **GPL 3.0 license**. Check [license](https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/LICENSE) for more info.
+- Extended Bogeys is lisenced under the **GPL 3.0 license**. Check the [license](https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/LICENSE) for more info.
 
-Most of the code for the bogeys and bogey blocks is from Create: Steam n' Rails, which is licensed under the **MIT license**, check their [**license**](https://github.com/Layers-of-Railways/Railway/blob/1.19/dev/LICENSE) for more info.
+- Most of the code for the bogeys and bogey blocks is from Create: Steam n' Rails, which is licensed under the **MIT license**, check their [license](https://github.com/Layers-of-Railways/Railway/blob/1.19/dev/LICENSE) for more info.
+
+- Some parts of Create's code was used in this projet, which is licensed under the **MIT license**, check their [license](https://github.com/Creators-of-Create/Create/blob/mc1.18/dev/LICENSE) for more info.
 
 
 ## Disclaimer
- - **_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minercaft modding)._**
+**_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minercaft modding)._**
 **_Meaning, that some issue may take longer than usual to fix, but I am and will be actively maintaining this fork until a stable official release for EB comes out_**
 
- - **If you have any issues, please use the issue tracker, or message @weidos.oddities (me) on discord (dont bug the main devs, that won't resolve the issues as they aren't the ones maintaining this fork)**
+**If you have any issues, please use the issue tracker, or message @weidos.oddities (me) on discord (dont bug the main devs, that won't resolve the issues as they aren't the ones maintaining this fork)**
