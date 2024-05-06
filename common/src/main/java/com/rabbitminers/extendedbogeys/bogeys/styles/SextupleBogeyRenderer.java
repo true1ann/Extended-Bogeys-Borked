@@ -153,13 +153,11 @@ public class SextupleBogeyRenderer {
             //Piston Rods
             getTransform(LARGE_12_RIGHT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translate(0,0,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_12_LEFT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translate(0,0,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
@@ -335,13 +333,11 @@ public class SextupleBogeyRenderer {
             //Piston Rods
             getTransform(LARGE_12_RIGHT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translate(0,0,0)
                     .translateZ(forwards ? RightRodOffset : RightRodOffset180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_12_LEFT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translate(0,0,0)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
                     .render(ms, light, vb);
 //----------------------------------------------------------------------------------------------------------------------
