@@ -42,9 +42,9 @@ An image of the currently added bogeys:
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
 ## License
-Extended Bogeys is lisenced under the GPL 3.0 License. Check [License](https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/LICENSE) for more info.
+Extended Bogeys is lisenced under the **GPL 3.0 license**. Check [license](https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/LICENSE) for more info.
 
-Most of the code for the bogeys and bogey blocks is from Create: Steam n' Rails, which is licensed under the [MIT License](https://github.com/Layers-of-Railways/Railway/blob/1.19/dev/LICENSE).
+Most of the code for the bogeys and bogey blocks is from Create: Steam n' Rails, which is licensed under the **MIT license**, check their [**license**](https://github.com/Layers-of-Railways/Railway/blob/1.19/dev/LICENSE) for more info.
 
 
 ## Disclaimer
