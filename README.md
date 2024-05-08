@@ -12,7 +12,7 @@
 ## Features
 #### Currently includes a large amount of custom bogeys
 - Bogeys added:
-	- Large Drivers: **_0-4-0 to 0-10-0_**
+	- Large Drivers: **_0-4-0 to 0-12-0_**
  	- Extra Large Drivers: **_0-4-0 to 0-10-0_**
 	- Extra Large Create Styled Drivers: **_0-2-0 to 0-8-0_** 
 	- Small Trailing Bogeys: **_0-2-0 to 0-6-0_**
