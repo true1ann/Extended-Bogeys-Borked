@@ -18,6 +18,7 @@ public class ExtendedBogeysPartials {
     LARGE_SHARED_WHEELS_BLIND = block("bogey/large/shared/wheels_blind"),
     EXTRA_LARGE_SHARED_WHEELS = block("bogey/extra_large/shared/wheels"),
     EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/extra_large/shared/wheels_semi_blind"),
+    EXTRA_LARGE_SHARED_WHEELS_BLIND = block("bogey/extra_large/shared/wheels_blind"),
 
 //Scotch Yoke Wheels
     CREATE_EXTRA_LARGE_SHARED_WHEELS = block("bogey/extra_large/shared/wheels_create"),
@@ -206,6 +207,24 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_8_RIGHT_M_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/right_m_rod"),
     EXTRA_LARGE_8_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/left_p_rod"),
     EXTRA_LARGE_8_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/right_p_rod"),
+
+//Extra Large 0-10-0 Long
+    EXTRA_LARGE_10_FRAME_LONG = block("bogey/extra_large/xl10/xl10_long/frame"),
+    EXTRA_LARGE_10_LEFT_M_ROD_LONG = block("bogey/extra_large/xl10/xl10_long/left_m_rod"),
+    EXTRA_LARGE_10_RIGHT_M_ROD_LONG = block("bogey/extra_large/xl10/xl10_long/right_m_rod"),
+    EXTRA_LARGE_10_LEFT_P_ROD_LONG = block("bogey/extra_large/xl10/xl10_long/left_p_rod"),
+    EXTRA_LARGE_10_RIGHT_P_ROD_LONG = block("bogey/extra_large/xl10/xl10_long/right_p_rod"),
+
+//Extra Large 0-10-0 Shared
+    EXTRA_LARGE_10_SHARED_LEFT_C_ROD = block("bogey/extra_large/xl10/xl10_shared/left_c_rod"),
+    EXTRA_LARGE_10_SHARED_RIGHT_C_ROD = block("bogey/extra_large/xl10/xl10_shared/right_c_rod"),
+
+//Extra Large 0-10-0 Short
+    EXTRA_LARGE_10_FRAME_SHORT = block("bogey/extra_large/xl10/xl10_short/frame"),
+    EXTRA_LARGE_10_LEFT_M_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/left_m_rod"),
+    EXTRA_LARGE_10_RIGHT_M_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/right_m_rod"),
+    EXTRA_LARGE_10_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/left_p_rod"),
+    EXTRA_LARGE_10_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/right_p_rod"),
 
 //Extra Large Scotch Yoke 0-2-0
     CREATE_EXTRA_LARGE_2_FRAME = block("bogey/extra_large/xl2_create/frame"),

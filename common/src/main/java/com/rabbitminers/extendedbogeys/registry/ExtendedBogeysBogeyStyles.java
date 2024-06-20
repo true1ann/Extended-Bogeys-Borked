@@ -30,6 +30,8 @@ import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxleBogeyRenderer.Ext
 import com.rabbitminers.extendedbogeys.bogeys.styles.QuadrupleAxleBogeyRenderer.ExtraLargeQuadrupleAxleBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.QuadrupleAxleBogeyRenderer.ExtraLargeQuadrupleAxleLongBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.QuadrupleAxleBogeyRenderer.ExtraLargeQuadrupleAxleShortBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.QuintupleAxleBogeyRenderer.ExtraLargeQuintupleAxleLongBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.QuintupleAxleBogeyRenderer.ExtraLargeQuintupleAxleShortBogeyRenderer;
 import com.rabbitminers.extendedbogeys.data.ExtendedBogeysBogeySize;
 import com.simibubi.create.AllBogeyStyles;
 import com.simibubi.create.Create;
@@ -136,11 +138,13 @@ public class ExtendedBogeysBogeyStyles {
     public static final BogeyStyle QUINTUPLE_AXLE_LONG_BOGEY = create("quintuple_axle_long")
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.quintuple_axle_long"))
             .size(BogeySizes.LARGE, () -> LargeQuintupleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
+            .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeQuintupleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
             .build();
 
     public static final BogeyStyle QUINTUPLE_AXLE_SHORT_BOGEY = create("quintuple_axle_short")
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.quintuple_axle_short"))
             .size(BogeySizes.LARGE, () -> LargeQuintupleAxleShortBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
+            .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeQuintupleAxleShortBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
             .build();
 
     public static final BogeyStyle SEXTUPLE_AXLE_LONG_BOGEY = create("sextuple_axle_long")

@@ -38,6 +38,6 @@ side="BOTH"
 [[dependencies.extendedbogeys]]
 modId="railways"
 mandatory=true
-versionRange="1.6.1"
-ordering="NONE"
+versionRange=","
+ordering="AFTER"
 side="BOTH"
