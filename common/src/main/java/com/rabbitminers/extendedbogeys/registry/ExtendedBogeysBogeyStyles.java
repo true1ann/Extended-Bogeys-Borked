@@ -3,8 +3,11 @@ package com.rabbitminers.extendedbogeys.registry;
 import com.rabbitminers.extendedbogeys.ExtendedBogeys;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxisTrailingRenderer.SmallDoubleAxisTrailingRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.SingleAxisTrailingRenderer.SmallSingleAxisTrailingRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.SingleAxleBogeyRenderer.SmallSingleAxleOffsetRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxisTrailingRenderer.SmallTripleAxisTrailingRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.SingleAxleBogeyRenderer.LargeSingleAxleLongBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.LargeDoubleAxleLongBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.LargeDoubleAxleLongBogeyRearRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.LargeDoubleAxleShortBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxleBogeyRenderer.SmallTripleAxleBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxleBogeyRenderer.LargeTripleAxleLongBogeyRenderer;
@@ -19,8 +22,10 @@ import com.rabbitminers.extendedbogeys.bogeys.styles.QuintupleAxleBogeyRenderer.
 import com.rabbitminers.extendedbogeys.bogeys.styles.QuintupleAxleBogeyRenderer.LargeQuintupleAxleShortBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.SextupleBogeyRenderer.LargeSextupleAxleLongBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.SextupleBogeyRenderer.LargeSextupleAxleShortBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.SingleAxleBogeyRenderer.ExtraLargeSingleAxleLongBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.ExtraLargeDoubleAxleBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.ExtraLargeDoubleAxleLongBogeyRenderer;
+import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.ExtraLargeDoubleAxleExtraLongBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.DoubleAxleBogeyRenderer.ExtraLargeDoubleAxleShortBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxleBogeyRenderer.ExtraLargeTripleAxleBogeyRenderer;
 import com.rabbitminers.extendedbogeys.bogeys.styles.TripleAxleBogeyRenderer.ExtraLargeTripleAxleLongBogeyRenderer;
@@ -47,6 +52,17 @@ public class ExtendedBogeysBogeyStyles {
             .size(BogeySizes.SMALL, () -> SmallSingleAxisTrailingRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.SMALL))
             .build();
 
+    public static final BogeyStyle SINGLE_AXLE_STANDARD = create("single_axle_standard")
+            .displayName(Components.translatable("extendedbogeys.bogeys.styles.single_axle_standard"))
+            .size(BogeySizes.SMALL, () -> SmallSingleAxleOffsetRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.SMALL))
+            .build();
+
+    public static final BogeyStyle SINGLE_AXLE_LONG_BOGEY = create("single_axle_long")
+            .displayName(Components.translatable("extendedbogeys.bogeys.styles.single_axle_long"))
+            .size(BogeySizes.LARGE, () -> LargeSingleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
+            .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeSingleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
+            .build();
+
     public static final BogeyStyle CREATE_DOUBLE_AXLE_BOGEY = create("double_axle_scotch_yoke")
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.double_axle_scotch_yoke"))
             .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeDoubleAxleBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
@@ -56,6 +72,12 @@ public class ExtendedBogeysBogeyStyles {
             .displayName(Components.translatable("extendedbogeys.bogeys.styles.double_axle_long"))
             .size(BogeySizes.LARGE, () -> LargeDoubleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
             .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeDoubleAxleLongBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
+            .build();
+
+    public static final BogeyStyle DOUBLE_AXLE_EXTRA_LONG_BOGEY = create("double_axle_extra_long")
+            .displayName(Components.translatable("extendedbogeys.bogeys.styles.double_axle_extra_long"))
+            .size(BogeySizes.LARGE, () -> LargeDoubleAxleLongBogeyRearRenderer::new, ExtendedBogeysBlocks.STANDARD_BOGEYS.get(ExtendedBogeysBogeySize.LARGE))
+            .size(ExtendedBogeysBogeySizes.EXTRA_LARGE, () -> ExtraLargeDoubleAxleExtraLongBogeyRenderer::new, ExtendedBogeysBlocks.EXTRA_LARGE_BOGEYS.get(ExtendedBogeysBogeySize.EXTRA_LARGE))
             .build();
 
     public static final BogeyStyle DOUBLE_AXLE_SHORT_BOGEY = create("double_axle_short")

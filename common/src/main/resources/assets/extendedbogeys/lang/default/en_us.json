@@ -22,8 +22,11 @@
   "extendedbogeys.bogey.style.no_other_sizes": "No other sizes",
 
   "extendedbogeys.bogeys.styles.single_axle_trailer": "Small 0-2-0 Trailing",
+  "extendedbogeys.bogeys.styles.single_axle_standard": "Small 0-2-0 Standard",
+  "extendedbogeys.bogeys.styles.single_axle_long": "Long 0-2-0 Driver",
   "extendedbogeys.bogeys.styles.double_axle_scotch_yoke": "Extra Large 0-4-0 Create Styled",
   "extendedbogeys.bogeys.styles.double_axle_long": "Long 0-4-0 Driver",
+  "extendedbogeys.bogeys.styles.double_axle_extra_long": "Extra Long 0-4-0 Driver",
   "extendedbogeys.bogeys.styles.double_axle_short": "Short 0-4-0 Driver",
   "extendedbogeys.bogeys.styles.double_axle_trailer": "Small 0-4-0 Trailing",
   "extendedbogeys.bogeys.styles.triple_axle": "Small Triple Axle",

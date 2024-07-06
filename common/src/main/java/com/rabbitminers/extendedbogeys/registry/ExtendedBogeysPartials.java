@@ -2,11 +2,6 @@ package com.rabbitminers.extendedbogeys.registry;
 
 import com.jozufozu.flywheel.core.PartialModel;
 import com.rabbitminers.extendedbogeys.ExtendedBogeys;
-import com.simibubi.create.AllPartialModels;
-import com.simibubi.create.content.trains.bogey.StandardBogeyRenderer;
-
-import java.util.EnumMap;
-import java.util.Map;
 
 public class ExtendedBogeysPartials {
     public static final PartialModel
@@ -25,6 +20,7 @@ public class ExtendedBogeysPartials {
     CREATE_EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/extra_large/shared/wheels_semi_blind_create"),
 
 //Small Stuff...
+    SMALL_STANDARD_2_FRAME = block("bogey/small/s2/frame"),
     SMALL_STANDARD_6_FRAME = block("bogey/small/s6/frame"),
     SMALL_STANDARD_8_FRAME = block("bogey/small/s8/frame"),
     SMALL_STANDARD_10_FRAME = block("bogey/small/s10/frame"),
@@ -32,6 +28,15 @@ public class ExtendedBogeysPartials {
     SMALL_TRAILING_2_FRAME = block("bogey/small/t2/frame"),
     SMALL_TRAILING_4_FRAME = block("bogey/small/t4/frame"),
     SMALL_TRAILING_6_FRAME = block("bogey/small/t6/frame"),
+
+//Large 0-2-0 Long
+    LARGE_2_FRAME_LONG = block("bogey/large/l2/l2_long/frame"),
+    LARGE_2_LEFT_C_ROD_LONG = block("bogey/large/l2/l2_long/left_c_rod"),
+    LARGE_2_RIGHT_C_ROD_LONG = block("bogey/large/l2/l2_long/right_c_rod"),
+    LARGE_2_LEFT_M_ROD_LONG = block("bogey/large/l2/l2_long/left_m_rod"),
+    LARGE_2_RIGHT_M_ROD_LONG = block("bogey/large/l2/l2_long/right_m_rod"),
+    LARGE_2_LEFT_P_ROD_LONG = block("bogey/large/l2/l2_long/left_p_rod"),
+    LARGE_2_RIGHT_P_ROD_LONG = block("bogey/large/l2/l2_long/right_p_rod"),
 
 //Large 0-4-0 Long
     LARGE_4_FRAME_LONG = block("bogey/large/l4/l4_long/frame"),
@@ -41,6 +46,15 @@ public class ExtendedBogeysPartials {
     LARGE_4_RIGHT_M_ROD_LONG = block("bogey/large/l4/l4_long/right_m_rod"),
     LARGE_4_LEFT_P_ROD_LONG = block("bogey/large/l4/l4_long/left_p_rod"),
     LARGE_4_RIGHT_P_ROD_LONG = block("bogey/large/l4/l4_long/right_p_rod"),
+
+    //Large 0-4-0 Long Rear Linkage
+    LARGE_4_FRAME_LONG_REAR = block("bogey/large/l4/l4_long_rear/frame"),
+    LARGE_4_LEFT_C_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/left_c_rod"),
+    LARGE_4_RIGHT_C_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/right_c_rod"),
+    LARGE_4_LEFT_M_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/left_m_rod"),
+    LARGE_4_RIGHT_M_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/right_m_rod"),
+    LARGE_4_LEFT_P_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/left_p_rod"),
+    LARGE_4_RIGHT_P_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/right_p_rod"),
 
 //Large 0-4-0 Short
     LARGE_4_FRAME_SHORT = block("bogey/large/l4/l4_short/frame"),
@@ -144,12 +158,31 @@ public class ExtendedBogeysPartials {
     LARGE_12_LEFT_P_ROD_SHORT = block("bogey/large/l12/l12_short/left_p_rod"),
     LARGE_12_RIGHT_P_ROD_SHORT = block("bogey/large/l12/l12_short/right_p_rod"),
 
+//Extra Large 0-2-0 Long
+    EXTRA_LARGE_2_FRAME_LONG = block("bogey/extra_large/xl2/xl2_long/frame"),
+    EXTRA_LARGE_2_LEFT_C_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/left_c_rod"),
+    EXTRA_LARGE_2_RIGHT_C_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/right_c_rod"),
+    EXTRA_LARGE_2_LEFT_M_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/left_m_rod"),
+    EXTRA_LARGE_2_RIGHT_M_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/right_m_rod"),
+    EXTRA_LARGE_2_LEFT_P_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/left_p_rod"),
+    EXTRA_LARGE_2_RIGHT_P_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/right_p_rod"),
+
+
 //Extra Large 0-4-0 Long
     EXTRA_LARGE_4_FRAME_LONG = block("bogey/extra_large/xl4/xl4_long/frame"),
     EXTRA_LARGE_4_LEFT_M_ROD_LONG = block("bogey/extra_large/xl4/xl4_long/left_m_rod"),
     EXTRA_LARGE_4_RIGHT_M_ROD_LONG = block("bogey/extra_large/xl4/xl4_long/right_m_rod"),
     EXTRA_LARGE_4_LEFT_P_ROD_LONG = block("bogey/extra_large/xl4/xl4_long/left_p_rod"),
     EXTRA_LARGE_4_RIGHT_P_ROD_LONG = block("bogey/extra_large/xl4/xl4_long/right_p_rod"),
+
+//Extra Large 0-4-0 Extra Long
+    EXTRA_LARGE_4_FRAME_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/frame"),
+    EXTRA_LARGE_4_LEFT_M_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/left_m_rod"),
+    EXTRA_LARGE_4_RIGHT_M_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/right_m_rod"),
+    EXTRA_LARGE_4_LEFT_P_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/left_p_rod"),
+    EXTRA_LARGE_4_RIGHT_P_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/right_p_rod"),
+    EXTRA_LARGE_4_LEFT_C_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/left_c_rod"),
+    EXTRA_LARGE_4_RIGHT_C_ROD_EXTRA_LONG = block("bogey/extra_large/xl4/xl4_extra_long/right_c_rod"),
 
 //Extra Large 0-4-0 Connecting Rods
     EXTRA_LARGE_4_SHARED_LEFT_C_ROD = block("bogey/extra_large/xl4/xl4_shared/left_c_rod"),
@@ -247,7 +280,7 @@ public class ExtendedBogeysPartials {
     CREATE_EXTRA_LARGE_6_PISTON_RIGHT = block("bogey/extra_large/xl6_create/right_piston"),
     CREATE_EXTRA_LARGE_6_PISTON_LEFT = block("bogey/extra_large/xl6_create/left_piston"),
 
-    //Extra Large Scotch Yoke 0-8-0
+//Extra Large Scotch Yoke 0-8-0
     CREATE_EXTRA_LARGE_8_FRAME = block("bogey/extra_large/xl8_create/frame"),
     CREATE_EXTRA_LARGE_8_PINS_RIGHT = block("bogey/extra_large/xl8_create/right_pins"),
     CREATE_EXTRA_LARGE_8_PINS_LEFT = block("bogey/extra_large/xl8_create/left_pins"),
