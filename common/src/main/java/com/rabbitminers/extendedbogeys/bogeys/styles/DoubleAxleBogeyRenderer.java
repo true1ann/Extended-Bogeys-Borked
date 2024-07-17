@@ -57,7 +57,7 @@ public class DoubleAxleBogeyRenderer {
             double LeftMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleLeft) * 0.13));
 
             double RightMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleRight180) * 0.13));
-            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.10));
+            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.13));
 //______________________________________________________________________________________________________________________
             //Frame
             getTransform(LARGE_4_FRAME_LONG, ms, inInstancedContraption)

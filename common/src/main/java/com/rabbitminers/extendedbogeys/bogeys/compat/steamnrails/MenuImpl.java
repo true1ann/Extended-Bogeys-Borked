@@ -27,7 +27,7 @@ public interface MenuImpl {
         SINGLE_AXLE_OFFSET = INSTANCE.addToCategory(SINGLE_AXLE, SINGLE_AXLE_STANDARD,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/small_0-2-0_trailing.png")),
         SINGLE_AXLE_LONG = INSTANCE.addToCategory(SINGLE_AXLE, SINGLE_AXLE_LONG_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/small_0-2-0_trailing.png")),
     //Double Axles
-        DOUBLE_AXLE_TRAILING = INSTANCE.addToCategory(DOUBLE_AXLE, DOUBLE_AXLE_TRAILER,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/small_0-4-0_trailing.png")),
+        TRAILING_DOUBLE_AXLE = INSTANCE.addToCategory(DOUBLE_AXLE, DOUBLE_AXLE_TRAILER,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/small_0-4-0_trailing.png")),
         DOUBLE_AXLE_LONG = INSTANCE.addToCategory(DOUBLE_AXLE, DOUBLE_AXLE_LONG_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/doubleaxle_driver.png"), 17),
         DOUBLE_AXLE_EXTRA_LONG = INSTANCE.addToCategory(DOUBLE_AXLE, DOUBLE_AXLE_EXTRA_LONG_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/doubleaxle_driver.png"), 17),
         DOUBLE_AXLE_SHORT = INSTANCE.addToCategory(DOUBLE_AXLE, DOUBLE_AXLE_SHORT_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/doubleaxle_driver.png"), 17),
