@@ -264,4 +264,34 @@ public class SingleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
+//Extra Large 0-2-0 (pistonless)
+    public static class ExtraLargeSingleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
+
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, EXTRA_LARGE_2_FRAME_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS_SINGLE);
+        }
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+        }
+        @Override
+        public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+//______________________________________________________________________________________________________________________
+            //Frame
+            getTransform(EXTRA_LARGE_2_FRAME_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Driver Wheels
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_SINGLE, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .translate(0, 1.25, 0)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 0, 0)
+                    .render(ms, light, vb);
+        }
+    }
 }

@@ -503,7 +503,7 @@ public class QuintupleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
-    //Extra Large 0-10-0 (short)
+//Extra Large 0-10-0 (short)
     public static class ExtraLargeQuintupleAxleShortBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 
         @Override
@@ -622,6 +622,79 @@ public class QuintupleAxleBogeyRenderer {
                     .translate(0, 1.25, -4.5625)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .render(ms, light, vb);
+        }
+    }
+//Extra Large 0-10-0 (pistonless)
+    public static class ExtraLargeQuintupleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
+
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, EXTRA_LARGE_10_FRAME_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS, 2);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, 2);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS_BLIND);
+            createModelInstance(materialManager, EXTRA_LARGE_10_RIGHT_C_ROD_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_10_LEFT_C_ROD_PISTONLESS);
+        }
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+        }
+        @Override
+        public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+//______________________________________________________________________________________________________________________
+            //Frame
+            getTransform(EXTRA_LARGE_10_FRAME_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Driver Wheels
+            BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
+            for (int side1 : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
+                BogeyModelData wheel1 = wheels1[(side1 + 1) / 2];
+                wheel1.rotateY(forwards ? 0 : 180)
+                        .translate(0, 1.25, side1 * 4.5)
+                        .rotateX(forwards ? wheelAngle: -wheelAngle)
+                        .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
+            }
+
+            BogeyModelData[] wheels2 = getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption, 2);
+            for (int side2 : Iterate.positiveAndNegative) {
+                BogeyModelData wheel2 = wheels2[(side2 + 1) / 2];
+                wheel2.rotateY(forwards ? 0 : 180)
+                        .translate(0, 1.25, side2 * 2.25)
+                        .rotateX(forwards ? wheelAngle: -wheelAngle)
+                        .render(ms, light, vb);
+            }
+
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_BLIND, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .translate(0, 1.25, 0)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 0, 0)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Connecting Rods
+            getTransform(EXTRA_LARGE_10_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle : wheelAngle)
+                    .translateY(1.25)
+                    .render(ms, light, vb);
+
+            getTransform(EXTRA_LARGE_10_LEFT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
+                    .translateY(1.25)
                     .render(ms, light, vb);
         }
     }

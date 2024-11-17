@@ -1,0 +1,16 @@
+{
+    "parent": "block/block",
+    "loader": "forge:obj",
+    "flip_v": true,
+    "model": "extendedbogeys:models/block/bogey/extra_large/xl6/xl6e_pistonless/frame.obj",
+    "textures": {
+        "0": "extendedbogeys:block/bogey/extra_large/piston",
+        "1": "extendedbogeys:block/bogey/axis",
+        "2": "extendedbogeys:block/bogey/extra_large/frame",
+        "3": "extendedbogeys:block/bogey/extra_large/trailing_bogey_base",
+        "4": "extendedbogeys:block/bogey/wheel",
+        "5": "extendedbogeys:block/bogey/extra_large/small_frame",
+        "6": "extendedbogeys:block/bogey/extra_large/xl_belts"
+    },
+    "porting_lib:loader": "porting_lib:obj"
+}

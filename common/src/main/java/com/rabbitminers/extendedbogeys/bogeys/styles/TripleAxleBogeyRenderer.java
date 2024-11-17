@@ -860,6 +860,69 @@ public class TripleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
+    //Extra Large 0-6-0 (pistonless)
+    public static class ExtraLargeTripleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
+
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, EXTRA_LARGE_6_FRAME_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS, 2);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND);
+            createModelInstance(materialManager, EXTRA_LARGE_6_RIGHT_C_ROD_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_6_LEFT_C_ROD_PISTONLESS);
+        }
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+        }
+        @Override
+        public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+//______________________________________________________________________________________________________________________
+            //Frame
+            getTransform(EXTRA_LARGE_6_FRAME_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Driver Wheels
+            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
+            for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
+                BogeyModelData wheel = wheels[(side + 1) / 2];
+                wheel.rotateY(forwards ? 0 : 180)
+                        .translate(0, 1.25, side * 2.25)
+                        .rotateX(forwards ? wheelAngle: -wheelAngle)
+                        .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
+            }
+
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .translate(0, 1.25, 0)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 0, 0)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Connecting Rods
+            getTransform(EXTRA_LARGE_6_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle : wheelAngle)
+                    .translateY(1.25)
+                    .render(ms, light, vb);
+
+            getTransform(EXTRA_LARGE_6_LEFT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
+                    .translateY(1.25)
+                    .render(ms, light, vb);
+        }
+    }
 //Extra Large Extended 0-6-0 (long)
     public static class ExtraLargeTripleExtendedAxleLongBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 
@@ -1085,6 +1148,69 @@ public class TripleAxleBogeyRenderer {
                     .translate(0, 1.25, -2.4375)
                     .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
                     .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .render(ms, light, vb);
+        }
+    }
+//Extra Large Extended 0-6-0 (Pistonless)
+    public static class ExtraLargeTripleExtendedAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
+
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, EXTRA_LARGE_6E_FRAME_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS, 2);
+            createModelInstance(materialManager, EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND);
+            createModelInstance(materialManager, EXTRA_LARGE_6E_RIGHT_C_ROD_PISTONLESS);
+            createModelInstance(materialManager, EXTRA_LARGE_6E_LEFT_C_ROD_PISTONLESS);
+        }
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+        }
+        @Override
+        public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+//______________________________________________________________________________________________________________________
+            //Frame
+            getTransform(EXTRA_LARGE_6E_FRAME_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Driver Wheels
+            BogeyModelData[] wheels = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
+            for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
+                BogeyModelData wheel = wheels[(side + 1) / 2];
+                wheel.rotateY(forwards ? 0 : 180)
+                        .translate(0, 1.25, 0.5625 + side * 2.8125)
+                        .rotateX(forwards ? wheelAngle: -wheelAngle)
+                        .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
+            }
+
+            getTransform(EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .translate(0, 1.25, 0)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 0, 0)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Connecting Rods
+            getTransform(EXTRA_LARGE_6E_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle : wheelAngle)
+                    .translateY(1.25)
+                    .render(ms, light, vb);
+
+            getTransform(EXTRA_LARGE_6E_LEFT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
+                    .translate(0, 3 / 8f, 0)
+                    .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
+                    .translateY(1.25)
                     .render(ms, light, vb);
         }
     }

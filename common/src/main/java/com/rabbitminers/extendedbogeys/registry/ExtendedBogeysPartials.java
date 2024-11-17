@@ -11,11 +11,11 @@ public class ExtendedBogeysPartials {
     LARGE_SHARED_WHEELS = block("bogey/large/shared/wheels"),
     LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/large/shared/wheels_semi_blind"),
     LARGE_SHARED_WHEELS_BLIND = block("bogey/large/shared/wheels_blind"),
-
     LARGE_SHARED_WHEELS_SINGLE = block("bogey/large/shared/wheels_single"),
     EXTRA_LARGE_SHARED_WHEELS = block("bogey/extra_large/shared/wheels"),
     EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND = block("bogey/extra_large/shared/wheels_semi_blind"),
     EXTRA_LARGE_SHARED_WHEELS_BLIND = block("bogey/extra_large/shared/wheels_blind"),
+    EXTRA_LARGE_SHARED_WHEELS_SINGLE = block("bogey/extra_large/shared/wheels_single"),
 
 //Scotch Yoke Wheels
     CREATE_EXTRA_LARGE_SHARED_WHEELS = block("bogey/extra_large/shared/wheels_create"),
@@ -52,7 +52,7 @@ public class ExtendedBogeysPartials {
     LARGE_4_LEFT_P_ROD_LONG = block("bogey/large/l4/l4_long/left_p_rod"),
     LARGE_4_RIGHT_P_ROD_LONG = block("bogey/large/l4/l4_long/right_p_rod"),
 
-    //Large 0-4-0 Long Rear Linkage
+//Large 0-4-0 Long Rear Linkage
     LARGE_4_FRAME_LONG_REAR = block("bogey/large/l4/l4_long_rear/frame"),
     LARGE_4_LEFT_C_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/left_c_rod"),
     LARGE_4_RIGHT_C_ROD_LONG_REAR = block("bogey/large/l4/l4_long_rear/right_c_rod"),
@@ -197,6 +197,8 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_2_LEFT_P_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/left_p_rod"),
     EXTRA_LARGE_2_RIGHT_P_ROD_LONG = block("bogey/extra_large/xl2/xl2_long/right_p_rod"),
 
+//Extra Large 0-2-0 Pistonless
+    EXTRA_LARGE_2_FRAME_PISTONLESS = block("bogey/extra_large/xl2/xl2_pistonless/frame"),
 
 //Extra Large 0-4-0 Long
     EXTRA_LARGE_4_FRAME_LONG = block("bogey/extra_large/xl4/xl4_long/frame"),
@@ -225,6 +227,11 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_4_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl4/xl4_short/left_p_rod"),
     EXTRA_LARGE_4_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl4/xl4_short/right_p_rod"),
 
+//Extra Large 0-4-0 Pistonless
+    EXTRA_LARGE_4_FRAME_PISTONLESS = block("bogey/extra_large/xl4/xl4_pistonless/frame"),
+    EXTRA_LARGE_4_LEFT_C_ROD_PISTONLESS = block("bogey/extra_large/xl4/xl4_pistonless/left_c_rod"),
+    EXTRA_LARGE_4_RIGHT_C_ROD_PISTONLESS = block("bogey/extra_large/xl4/xl4_pistonless/right_c_rod"),
+
 //Extra Large 0-6-0 Long
     EXTRA_LARGE_6_FRAME_LONG = block("bogey/extra_large/xl6/xl6_long/frame"),
     EXTRA_LARGE_6_LEFT_M_ROD_LONG = block("bogey/extra_large/xl6/xl6_long/left_m_rod"),
@@ -243,6 +250,11 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_6_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl6/xl6_short/left_p_rod"),
     EXTRA_LARGE_6_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl6/xl6_short/right_p_rod"),
 
+//Extra Large 0-6-0 Pistonless
+    EXTRA_LARGE_6_FRAME_PISTONLESS = block("bogey/extra_large/xl6/xl6_pistonless/frame"),
+    EXTRA_LARGE_6_LEFT_C_ROD_PISTONLESS = block("bogey/extra_large/xl6/xl6_pistonless/left_c_rod"),
+    EXTRA_LARGE_6_RIGHT_C_ROD_PISTONLESS = block("bogey/extra_large/xl6/xl6_pistonless/right_c_rod"),
+
 //Extra Large Extended 0-6-0 Long
     EXTRA_LARGE_6E_FRAME_LONG = block("bogey/extra_large/xl6/xl6e_long/frame"),
 
@@ -252,6 +264,11 @@ public class ExtendedBogeysPartials {
 
 //Extra Large Extended 0-6-0 Short
     EXTRA_LARGE_6E_FRAME_SHORT = block("bogey/extra_large/xl6/xl6e_short/frame"),
+
+//Extra Large Extended 0-6-0 Pistonless
+    EXTRA_LARGE_6E_FRAME_PISTONLESS = block("bogey/extra_large/xl6/xl6e_pistonless/frame"),
+    EXTRA_LARGE_6E_LEFT_C_ROD_PISTONLESS = block("bogey/extra_large/xl6/xl6e_pistonless/left_c_rod"),
+    EXTRA_LARGE_6E_RIGHT_C_ROD_PISTONLESS = block("bogey/extra_large/xl6/xl6e_pistonless/right_c_rod"),
 
 //Extra Large 0-8-0 Long
     EXTRA_LARGE_8_FRAME_LONG = block("bogey/extra_large/xl8/xl8_long/frame"),
@@ -271,6 +288,11 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_8_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/left_p_rod"),
     EXTRA_LARGE_8_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl8/xl8_short/right_p_rod"),
 
+//Extra Large 0-8-0 Pistonless
+    EXTRA_LARGE_8_FRAME_PISTONLESS = block("bogey/extra_large/xl8/xl8_pistonless/frame"),
+    EXTRA_LARGE_8_LEFT_C_ROD_PISTONLESS = block("bogey/extra_large/xl8/xl8_pistonless/left_c_rod"),
+    EXTRA_LARGE_8_RIGHT_C_ROD_PISTONLESS = block("bogey/extra_large/xl8/xl8_pistonless/right_c_rod"),
+
 //Extra Large 0-10-0 Long
     EXTRA_LARGE_10_FRAME_LONG = block("bogey/extra_large/xl10/xl10_long/frame"),
     EXTRA_LARGE_10_LEFT_M_ROD_LONG = block("bogey/extra_large/xl10/xl10_long/left_m_rod"),
@@ -288,6 +310,11 @@ public class ExtendedBogeysPartials {
     EXTRA_LARGE_10_RIGHT_M_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/right_m_rod"),
     EXTRA_LARGE_10_LEFT_P_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/left_p_rod"),
     EXTRA_LARGE_10_RIGHT_P_ROD_SHORT = block("bogey/extra_large/xl10/xl10_short/right_p_rod"),
+
+//Extra Large 0-10-0 Pistonless
+    EXTRA_LARGE_10_FRAME_PISTONLESS = block("bogey/extra_large/xl10/xl10_pistonless/frame"),
+    EXTRA_LARGE_10_LEFT_C_ROD_PISTONLESS = block("bogey/extra_large/xl10/xl10_pistonless/left_c_rod"),
+    EXTRA_LARGE_10_RIGHT_C_ROD_PISTONLESS = block("bogey/extra_large/xl10/xl10_pistonless/right_c_rod"),
 
 //Extra Large Scotch Yoke 0-2-0
     CREATE_EXTRA_LARGE_2_FRAME = block("bogey/extra_large/xl2_create/frame"),
