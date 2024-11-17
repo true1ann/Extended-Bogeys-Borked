@@ -11,7 +11,7 @@ import java.util.function.Supplier;
  * For compatibility with and without another mod present, we have to define load conditions of the specific code
  */
 public enum Mods {
-    STEAMNRAILS("railways");
+    RAILWAYS("railways");
     public final boolean isLoaded;
     public final boolean requiredForDataGen;
     public final @Nullable String fabricId;

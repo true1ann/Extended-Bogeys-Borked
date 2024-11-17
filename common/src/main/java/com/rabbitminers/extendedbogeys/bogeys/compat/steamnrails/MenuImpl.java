@@ -59,7 +59,7 @@ public interface MenuImpl {
         SEXTUPLE_AXLE_LONG = INSTANCE.addToCategory(SEXTUPLE_AXLE, SEXTUPLE_AXLE_LONG_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/tripleaxle_driver.png"), 13),
         SEXTUPLE_AXLE_SHORT = INSTANCE.addToCategory(SEXTUPLE_AXLE, SEXTUPLE_AXLE_SHORT_BOGEY,new ResourceLocation("extendedbogeys", "textures/gui/bogey_icons/tripleaxle_driver.png"), 13);
 
-    static void register() {
+    static void load() {
         ExtendedBogeys.LOGGER.info("Registered Steam N' Rails menu categories for " + ExtendedBogeys.MOD_NAME);
     }
 }

@@ -4,8 +4,6 @@ import com.rabbitminers.extendedbogeys.data.ExtendedBogeysLanguageProvider;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBlocks;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;
 import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeyStyles;
-import com.rabbitminers.extendedbogeys.bogeys.compat.Mods;
-import com.rabbitminers.extendedbogeys.bogeys.compat.steamnrails.MenuImpl;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.data.DataGenerator;
@@ -23,7 +21,6 @@ public class ExtendedBogeys {
         ExtendedBogeysBlocks.register();
         ExtendedBogeysBogeyStyles.register();
         ExtendedBogeysBogeySizes.register();
-        MenuImpl.register();
     }
 
     public static void gatherData(DataGenerator.PackGenerator gen) {

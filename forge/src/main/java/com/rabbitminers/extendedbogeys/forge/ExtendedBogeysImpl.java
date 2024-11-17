@@ -10,11 +10,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ExtendedBogeys.MOD_ID)
 public class ExtendedBogeysImpl {
+    static IEventBus bus;
     public ExtendedBogeysImpl() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ExtendedBogeys.registrate().registerEventListeners(eventBus);
+        bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ExtendedBogeys.registrate().registerEventListeners(bus);
         ExtendedBogeys.init();
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,
-                () -> ExtendedBogeysClient::init);
+                () -> ExtendedBogeysClientImpl::init);
     }
 }
