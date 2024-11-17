@@ -336,6 +336,62 @@ public class DoubleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
+
+//Large 0-4-0 (pistonless)
+    public static class LargeDoubleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
+
+        @Override
+        public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
+            createModelInstance(materialManager, LARGE_4_FRAME_PISTONLESS);
+            createModelInstance(materialManager, LARGE_SHARED_WHEELS, 2);
+            createModelInstance(materialManager, LARGE_4_RIGHT_C_ROD_PISTONLESS);
+            createModelInstance(materialManager, LARGE_4_LEFT_C_ROD_PISTONLESS);
+        }
+        @Override
+        public BogeySizes.BogeySize getSize() {
+            return BogeySizes.LARGE;
+        }
+        @Override
+        public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
+            boolean inInstancedContraption = vb == null;
+//______________________________________________________________________________________________________________________
+            //Frame
+            getTransform(LARGE_4_FRAME_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .render(ms, light, vb);
+//----------------------------------------------------------------------------------------------------------------------
+            //Driver Wheels
+            BogeyModelData[] wheels = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
+            for (int side : Iterate.positiveAndNegative) {
+                if (!inInstancedContraption)
+                    ms.pushPose();
+                BogeyModelData wheel = wheels[(side + 1) / 2];
+                wheel.rotateY(forwards ? 0 : 180)
+                        .translate(0, 1, side * 0.875)
+                        .rotateX(forwards ? wheelAngle: -wheelAngle)
+                        .render(ms, light, vb);
+                if (!inInstancedContraption)
+                    ms.popPose();
+            }
+//----------------------------------------------------------------------------------------------------------------------
+            //Connecting Rods
+            getTransform(LARGE_4_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle : -wheelAngle)
+                    .translate(0, 1 / 4f, 0)
+                    .rotateX(forwards ? -wheelAngle : wheelAngle)
+                    .translateY(1)
+                    .render(ms, light, vb);
+
+            getTransform(LARGE_4_LEFT_C_ROD_PISTONLESS, ms, inInstancedContraption)
+                    .rotateY(forwards ? 0 : 180)
+                    .rotateX(forwards ? wheelAngle + 90 : -wheelAngle + 90)
+                    .translate(0, 1 / 4f, 0)
+                    .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
+                    .translateY(1)
+                    .render(ms, light, vb);
+        }
+    }
 //Extra Large 0-4-0 (long)
     public static class ExtraLargeDoubleAxleLongBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 

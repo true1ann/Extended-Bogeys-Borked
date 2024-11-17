@@ -23,7 +23,6 @@ public class ExtendedBogeys {
         ExtendedBogeysBlocks.register();
         ExtendedBogeysBogeyStyles.register();
         ExtendedBogeysBogeySizes.register();
-//        Mods.STEAMNRAILS.executeIfInstalled(() -> MenuImpl::register);
         MenuImpl.register();
     }
 
