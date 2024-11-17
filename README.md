@@ -36,7 +36,7 @@ You can download the latest version **[here](https://github.com/WeidosOddities/E
 ___
 #### Showcase
 
-Showcase of what can be made with Chipped, Create, Create: Copycats+, Create: Deco, Create: Design & Decor, Create: Steam n' Rails, Extended Bogeys, and Farmers Delight:
+What's currently available ingame (all aren't shwown in this image):
 
 <img src="preview.png"
      alt="Extended bogeys showcase"
