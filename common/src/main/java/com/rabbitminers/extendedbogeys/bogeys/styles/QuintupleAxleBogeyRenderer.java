@@ -4,21 +4,16 @@ import com.jozufozu.flywheel.api.MaterialManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.rabbitminers.extendedbogeys.bogeys.renderers.ExtendedBogeysBogeyRenderer;
-import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.content.trains.bogey.BogeyRenderer;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.entity.CarriageBogey;
 import com.simibubi.create.foundation.utility.AngleHelper;
 import com.simibubi.create.foundation.utility.Iterate;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 
 import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.*;
 
 public class QuintupleAxleBogeyRenderer {
-//Small 0-10-0 Standard
     public static class SmallQuintupleAxleBogeyRenderer extends BogeyRenderer {
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
@@ -51,9 +46,7 @@ public class QuintupleAxleBogeyRenderer {
             }
         }
     }
-//Large 0-10-0 (long)
     public static class LargeQuintupleAxleLongBogeyRenderer extends ExtendedBogeysBogeyRenderer {
-
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, LARGE_10_FRAME_LONG);
@@ -74,32 +67,29 @@ public class QuintupleAxleBogeyRenderer {
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Variables
-            double wheelAngleRight = Math.toRadians(wheelAngle);
-            double wheelAngleLeft = Math.toRadians(wheelAngle + 90);
 
-            double wheelAngleRight180 = Math.toRadians(-wheelAngle);
-            double wheelAngleLeft180 = Math.toRadians(-wheelAngle + 90);
+            double wheel_r = AngleHelper.rad(wheelAngle + 0);
+            double wheel_l = AngleHelper.rad(wheelAngle + 90);
 
-            double RightRodOffset = 1 / 4f * Math.sin(Math.toRadians(wheelAngle));
-            double LeftRodOffset = 1 / 4f * Math.sin(Math.toRadians(wheelAngle + 90));
+            double wheel_r180 = AngleHelper.rad(-(wheelAngle + 0));
+            double wheel_l180 = AngleHelper.rad(-(wheelAngle + 90));
 
-            double RightRodOffset180 = 1 / 4f * Math.sin(Math.toRadians(-wheelAngle));
-            double LeftRodOffset180 = 1 / 4f * Math.sin(Math.toRadians(-wheelAngle + 90));
+            double zoffset_r = 1 / 4f * Math.sin(wheel_r);
+            double zoffset_l = 1 / 4f * Math.sin(wheel_l);
 
-            double RightMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleRight) * 0.077));
-            double LeftMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleLeft) * 0.077));
+            double zoffset_r180 = 1 / 4f * Math.sin(wheel_r180);
+            double zoffset_l180 = 1 / 4f * Math.sin(wheel_l180);
 
-            double RightMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleRight180) * 0.077));
-            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.077));
-//______________________________________________________________________________________________________________________
-            //Frame
+            double xrotate_r = AngleHelper.deg(Math.sin(-Math.cos(wheel_r) * 0.077));
+            double xrotate_l = AngleHelper.deg(Math.sin(-Math.cos(wheel_l) * 0.077));
+
+            double xrotate_r180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_r180) * 0.077));
+            double xrotate_l180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_l180) * 0.077));
+
             getTransform(LARGE_10_FRAME_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -132,8 +122,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(LARGE_10_RIGHT_C_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -149,39 +138,35 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
                     .translateY(1)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Piston Rods
+
             getTransform(LARGE_10_RIGHT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_10_LEFT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Main Rods
+
             getTransform(LARGE_10_RIGHT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -4.75)
-                    .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .rotateX(forwards ? xrotate_r : xrotate_r180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_10_LEFT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -4.75)
-                    .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .rotateX(forwards ? xrotate_l : xrotate_l180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
         }
     }
-//Large 0-10-0 (short)
     public static class LargeQuintupleAxleShortBogeyRenderer extends ExtendedBogeysBogeyRenderer {
-
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, LARGE_10_FRAME_SHORT);
@@ -202,32 +187,29 @@ public class QuintupleAxleBogeyRenderer {
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Variables
-            double wheelAngleRight = Math.toRadians(wheelAngle);
-            double wheelAngleLeft = Math.toRadians(wheelAngle + 90);
 
-            double wheelAngleRight180 = Math.toRadians(-wheelAngle);
-            double wheelAngleLeft180 = Math.toRadians(-wheelAngle + 90);
+            double wheel_r = AngleHelper.rad(wheelAngle + 0);
+            double wheel_l = AngleHelper.rad(wheelAngle + 90);
 
-            double RightRodOffset = 1 / 4f * Math.sin(wheelAngleRight);
-            double LeftRodOffset = 1 / 4f * Math.sin(wheelAngleLeft);
+            double wheel_r180 = AngleHelper.rad(-(wheelAngle + 0));
+            double wheel_l180 = AngleHelper.rad(-(wheelAngle + 90));
 
-            double RightRodOffset180 = 1 / 4f * Math.sin(wheelAngleRight180);
-            double LeftRodOffset180 = 1 / 4f * Math.sin(wheelAngleLeft180);
+            double zoffset_r = 1 / 4f * Math.sin(wheel_r);
+            double zoffset_l = 1 / 4f * Math.sin(wheel_l);
 
-            double RightMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleRight) * 0.065));
-            double LeftMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleLeft) * 0.065));
+            double zoffset_r180 = 1 / 4f * Math.sin(wheel_r180);
+            double zoffset_l180 = 1 / 4f * Math.sin(wheel_l180);
 
-            double RightMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleRight180) * 0.065));
-            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.065));
-//______________________________________________________________________________________________________________________
-            //Frame
+            double xrotate_r = AngleHelper.deg(Math.sin(-Math.cos(wheel_r) * 0.065));
+            double xrotate_l = AngleHelper.deg(Math.sin(-Math.cos(wheel_l) * 0.065));
+
+            double xrotate_r180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_r180) * 0.065));
+            double xrotate_l180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_l180) * 0.065));
+
             getTransform(LARGE_10_FRAME_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -256,8 +238,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(LARGE_10_RIGHT_C_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -273,40 +254,35 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
                     .translateY(1)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Piston Rods
+
             getTransform(LARGE_10_RIGHT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_10_LEFT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0,1,0)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Main Rods
+
             getTransform(LARGE_10_RIGHT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -3.75)
-                    .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .rotateX(forwards ? xrotate_r : xrotate_r180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(LARGE_10_LEFT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1, -3.75)
-                    .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .rotateX(forwards ? xrotate_l : xrotate_l180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
         }
     }
-
-    //Large 0-10-0 (pistonless)
     public static class LargeQuintupleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
-
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, LARGE_10_FRAME_PISTONLESS);
@@ -323,13 +299,11 @@ public class QuintupleAxleBogeyRenderer {
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Frame
+
             getTransform(LARGE_10_FRAME_PISTONLESS, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -358,8 +332,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(LARGE_10_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -377,9 +350,7 @@ public class QuintupleAxleBogeyRenderer {
                     .render(ms, light, vb);
         }
     }
-    //Extra Large 0-10-0 (long)
     public static class ExtraLargeQuintupleAxleLongBogeyRenderer extends ExtendedBogeysBogeyRenderer {
-
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, EXTRA_LARGE_10_FRAME_LONG);
@@ -395,37 +366,34 @@ public class QuintupleAxleBogeyRenderer {
         }
         @Override
         public BogeySizes.BogeySize getSize() {
-            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+            return BogeySizes.LARGE;
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Variables
-            double wheelAngleRight = Math.toRadians(wheelAngle);
-            double wheelAngleLeft = Math.toRadians(wheelAngle + 90);
 
-            double wheelAngleRight180 = Math.toRadians(-wheelAngle);
-            double wheelAngleLeft180 = Math.toRadians(-wheelAngle + 90);
+            double wheel_r = AngleHelper.rad(wheelAngle + 0);
+            double wheel_l = AngleHelper.rad(wheelAngle + 90);
 
-            double RightRodOffset = 3 / 8f * Math.sin(Math.toRadians(wheelAngle));
-            double LeftRodOffset = 3 / 8f * Math.sin(Math.toRadians(wheelAngle + 90));
+            double wheel_r180 = AngleHelper.rad(-(wheelAngle + 0));
+            double wheel_l180 = AngleHelper.rad(-(wheelAngle + 90));
 
-            double RightRodOffset180 = 3 / 8f * Math.sin(Math.toRadians(-wheelAngle));
-            double LeftRodOffset180 = 3 / 8f * Math.sin(Math.toRadians(-wheelAngle + 90));
+            double zoffset_r = 3 / 8f * Math.sin(wheel_r);
+            double zoffset_l = 3 / 8f * Math.sin(wheel_l);
 
-            double RightMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleRight) * 0.066));
-            double LeftMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleLeft) * 0.066));
+            double zoffset_r180 = 3 / 8f * Math.sin(wheel_r180);
+            double zoffset_l180 = 3 / 8f * Math.sin(wheel_l180);
 
-            double RightMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleRight180) * 0.066));
-            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.066));
-//______________________________________________________________________________________________________________________
-            //Frame
+            double xrotate_r = AngleHelper.deg(Math.sin(-Math.cos(wheel_r) * 0.066));
+            double xrotate_l = AngleHelper.deg(Math.sin(-Math.cos(wheel_l) * 0.066));
+
+            double xrotate_r180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_r180) * 0.066));
+            double xrotate_l180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_l180) * 0.066));
+
             getTransform(EXTRA_LARGE_10_FRAME_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -458,8 +426,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(EXTRA_LARGE_10_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -475,37 +442,33 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
                     .translateY(1.25)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Piston Rods
+
             getTransform(EXTRA_LARGE_10_RIGHT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(EXTRA_LARGE_10_LEFT_P_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Main Rods
+
             getTransform(EXTRA_LARGE_10_RIGHT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -5.5625)
-                    .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .rotateX(forwards ? xrotate_r : xrotate_r180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(EXTRA_LARGE_10_LEFT_M_ROD_LONG, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -5.5625)
-                    .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .rotateX(forwards ? xrotate_l : xrotate_l180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
         }
     }
-//Extra Large 0-10-0 (short)
     public static class ExtraLargeQuintupleAxleShortBogeyRenderer extends ExtendedBogeysBogeyRenderer {
-
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
             createModelInstance(materialManager, EXTRA_LARGE_10_FRAME_SHORT);
@@ -521,37 +484,34 @@ public class QuintupleAxleBogeyRenderer {
         }
         @Override
         public BogeySizes.BogeySize getSize() {
-            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+            return BogeySizes.LARGE;
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Variables
-            double wheelAngleRight = Math.toRadians(wheelAngle);
-            double wheelAngleLeft = Math.toRadians(wheelAngle + 90);
 
-            double wheelAngleRight180 = Math.toRadians(-wheelAngle);
-            double wheelAngleLeft180 = Math.toRadians(-wheelAngle + 90);
+            double wheel_r = AngleHelper.rad(wheelAngle + 0);
+            double wheel_l = AngleHelper.rad(wheelAngle + 90);
 
-            double RightRodOffset = 3 / 8f * Math.sin(wheelAngleRight);
-            double LeftRodOffset = 3 / 8f * Math.sin(wheelAngleLeft);
+            double wheel_r180 = AngleHelper.rad(-(wheelAngle + 0));
+            double wheel_l180 = AngleHelper.rad(-(wheelAngle + 90));
 
-            double RightRodOffset180 = 3 / 8f * Math.sin(wheelAngleRight180);
-            double LeftRodOffset180 = 3 / 8f * Math.sin(wheelAngleLeft180);
+            double zoffset_r = 3 / 8f * Math.sin(wheel_r);
+            double zoffset_l = 3 / 8f * Math.sin(wheel_l);
 
-            double RightMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleRight) * 0.079));
-            double LeftMainRodRotateX = Math.toDegrees(Math.sin(-Math.cos(wheelAngleLeft) * 0.079));
+            double zoffset_r180 = 3 / 8f * Math.sin(wheel_r180);
+            double zoffset_l180 = 3 / 8f * Math.sin(wheel_l180);
 
-            double RightMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleRight180) * 0.079));
-            double LeftMainRodRotateX180 = Math.toDegrees(Math.sin(-Math.cos(-wheelAngleLeft180) * 0.079));
-//______________________________________________________________________________________________________________________
-            //Frame
+            double xrotate_r = AngleHelper.deg(Math.sin(-Math.cos(wheel_r) * 0.079));
+            double xrotate_l = AngleHelper.deg(Math.sin(-Math.cos(wheel_l) * 0.079));
+
+            double xrotate_r180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_r180) * 0.079));
+            double xrotate_l180 = AngleHelper.deg(Math.sin(-Math.cos(wheel_l180) * 0.079));
+
             getTransform(EXTRA_LARGE_10_FRAME_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -580,8 +540,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(EXTRA_LARGE_10_SHARED_RIGHT_C_ROD, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
@@ -597,35 +556,32 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? -wheelAngle - 90 : wheelAngle - 90)
                     .translateY(1.25)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Piston Rods
+
             getTransform(EXTRA_LARGE_10_RIGHT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(EXTRA_LARGE_10_LEFT_P_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Main Rods
+
             getTransform(EXTRA_LARGE_10_RIGHT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -4.5625)
-                    .rotateX(forwards ? RightMainRodRotateX : RightMainRodRotateX180)
-                    .translateZ(forwards ? RightRodOffset : RightRodOffset180)
+                    .rotateX(forwards ? xrotate_r : xrotate_r180)
+                    .translateZ(forwards ? zoffset_r : zoffset_r180)
                     .render(ms, light, vb);
 
             getTransform(EXTRA_LARGE_10_LEFT_M_ROD_SHORT, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .translate(0, 1.25, -4.5625)
-                    .rotateX(forwards ? LeftMainRodRotateX : LeftMainRodRotateX180)
-                    .translateZ(forwards ? LeftRodOffset : LeftRodOffset180)
+                    .rotateX(forwards ? xrotate_l : xrotate_l180)
+                    .translateZ(forwards ? zoffset_l : zoffset_l180)
                     .render(ms, light, vb);
         }
     }
-//Extra Large 0-10-0 (pistonless)
     public static class ExtraLargeQuintupleAxlePistonlessBogeyRenderer extends ExtendedBogeysBogeyRenderer {
 
         @Override
@@ -639,18 +595,16 @@ public class QuintupleAxleBogeyRenderer {
         }
         @Override
         public BogeySizes.BogeySize getSize() {
-            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+            return BogeySizes.LARGE;
         }
         @Override
         public void render(boolean forwards, float wheelAngle, PoseStack ms, int light, VertexConsumer vb, boolean inContraption) {
             boolean inInstancedContraption = vb == null;
-//______________________________________________________________________________________________________________________
-            //Frame
+
             getTransform(EXTRA_LARGE_10_FRAME_PISTONLESS, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Driver Wheels
+
             BogeyModelData[] wheels1 = getTransform(EXTRA_LARGE_SHARED_WHEELS, ms, inInstancedContraption, 2);
             for (int side1 : Iterate.positiveAndNegative) {
                 if (!inInstancedContraption)
@@ -679,8 +633,7 @@ public class QuintupleAxleBogeyRenderer {
                     .rotateX(forwards ? wheelAngle : -wheelAngle)
                     .translate(0, 0, 0)
                     .render(ms, light, vb);
-//----------------------------------------------------------------------------------------------------------------------
-            //Connecting Rods
+
             getTransform(EXTRA_LARGE_10_RIGHT_C_ROD_PISTONLESS, ms, inInstancedContraption)
                     .rotateY(forwards ? 0 : 180)
                     .rotateX(forwards ? wheelAngle : -wheelAngle)

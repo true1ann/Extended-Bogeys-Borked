@@ -13,7 +13,6 @@ import net.minecraft.nbt.CompoundTag;
 import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.*;
 
 public class StandardBogeyRenderer {
-    //Extra Large 0-2-0 Scotch Yoke
     public static class ExtraLargeStandardBogeyRenderer extends BogeyRenderer {
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
@@ -27,7 +26,7 @@ public class StandardBogeyRenderer {
 
         @Override
         public BogeySizes.BogeySize getSize() {
-            return ExtendedBogeysBogeySizes.EXTRA_LARGE;
+            return BogeySizes.LARGE;
         }
 
         @Override

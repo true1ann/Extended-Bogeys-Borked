@@ -3,20 +3,14 @@ package com.rabbitminers.extendedbogeys.bogeys.styles;
 import com.jozufozu.flywheel.api.MaterialManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.rabbitminers.extendedbogeys.registry.ExtendedBogeysBogeySizes;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.content.trains.bogey.BogeyRenderer;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.entity.CarriageBogey;
-import com.simibubi.create.foundation.utility.Iterate;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 
 import static com.rabbitminers.extendedbogeys.registry.ExtendedBogeysPartials.*;
 
 public class SingleAxisTrailingRenderer {
-//Small 0-2-0 Trailing
     public static class SmallSingleAxisTrailingRenderer extends BogeyRenderer {
         @Override
         public void initialiseContraptionModelData(MaterialManager materialManager, CarriageBogey carriageBogey) {
