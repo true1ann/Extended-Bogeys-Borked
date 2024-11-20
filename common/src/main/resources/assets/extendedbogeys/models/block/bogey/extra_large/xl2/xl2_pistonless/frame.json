@@ -5,11 +5,10 @@
     "model": "extendedbogeys:models/block/bogey/extra_large/xl2/xl2_pistonless/frame.obj",
     "textures": {
         "0": "extendedbogeys:block/bogey/extra_large/piston",
-        "1": "extendedbogeys:block/bogey/extra_large/trailing_bogey_base",
-        "2": "extendedbogeys:block/bogey/extra_large/frame",
-        "3": "extendedbogeys:block/bogey/wheel",
-        "4": "extendedbogeys:block/bogey/axis",
-        "5": "extendedbogeys:block/bogey/extra_large/xl_belts"
+        "1": "extendedbogeys:block/bogey/extra_large/frame",
+        "2": "extendedbogeys:block/bogey/wheel",
+        "3": "extendedbogeys:block/bogey/axis",
+        "4": "extendedbogeys:block/bogey/extra_large/xl_belts"
     },
     "porting_lib:loader": "porting_lib:obj"
 }
