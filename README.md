@@ -29,19 +29,18 @@
 - Bogeys that are able to be unlinked (extra large is currently not working):
   	- Small Bogeys
   	- Large Bogeys
-___
 
 ## Download
 You can download the latest version **[here](https://github.com/WeidosOddities/Extended-Bogeys-Borked/releases)**
-___
-#### Showcase
 
+## Showcase
 What's currently available ingame (all aren't shwown in this image):
 
 <img src="preview.png"
      alt="Extended bogeys showcase"
      style="float: left; border-radius: 10px" />
-## License
+     
+## Licenses
 - Extended Bogeys is licensed under the **GPL 3.0 license**. Check the [license](https://github.com/WeidosOddities/Extended-Bogeys-Borked/blob/1.20.1/multiloader/dev/LICENSE) for more info.
 
 - Most of the code for the bogeys and bogey blocks is from Create: Steam n' Rails, which is licensed under the **MIT license**, check their [license](https://github.com/Layers-of-Railways/Railway/blob/1.19/dev/LICENSE) for more info.
@@ -49,8 +48,5 @@ What's currently available ingame (all aren't shwown in this image):
 - Some parts of Create's code was used in this project, which is licensed under the **MIT license**, check their [license](https://github.com/Creators-of-Create/Create/blob/mc1.18/dev/LICENSE) for more info.
 
 
-## Disclaimer
-**_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minercaft modding)._**
-**_Meaning, that some issue may take longer than usual to fix, but I am and will be actively maintaining this fork until a stable official release for EB comes out_**
-
-**If you have any issues, please use the issue tracker, or message @weidos.oddities (me) on discord (dont bug the main devs, that won't resolve the issues as they aren't the ones maintaining this fork)**
+# Disclaimer
+**_This is an unofficial fork of Extended Bogeys, there will be bugs that might take a while to fix (I am very new to minecraft modding).<br><br>Meaning, that some issue may take longer than usual to fix, but I will be actively maintaining this fork until a stable official release for Extended Bogeys comes out_<br><br>If you have any issues, please use the issue tracker, or message @weidos.oddities (me) on discord (dont bug the main devs, that won't resolve the issues as they aren't the ones maintaining this fork)**
